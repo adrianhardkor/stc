@@ -1,8 +1,10 @@
 node() {
     def repoURL = "https://github.com/adrianhardkor/stc.git"
+    stage('git clone') {
+        git "${repoURL}"
+    }
     stage("Prepare Workspace") {
         sh """
-            git pull ${repoURL}
             pwd
             ls -l
         """
