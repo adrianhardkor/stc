@@ -67,7 +67,7 @@ node() {
                 }
                 }'''
             echo "${info}"
-            step([$class: 'XrayImportBuilder', endpointName: '/behave/multipart', importFilePath: 'target/behave.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+            step([$class: 'XrayImportBuilder', endpointName: '/behave', importFilePath: 'target/behave.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
         }
     stage('cleanWs') {
         echo "\n\nCleanWs"
