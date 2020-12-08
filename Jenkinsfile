@@ -5,6 +5,7 @@ node() {
         def branches = "${scm.branches}"
         if (branches.contains("master")) {
             git "${repoURL}"
+        }
         if (branches.contains("main")) {
             git branch: "main", url: "${repoURL}"
         }
