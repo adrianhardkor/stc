@@ -3,7 +3,7 @@ node() {
     stage('git clone') {
         echo "\n\n\n GIT CLONE STAGE"
         def branches_raw = "${scm.branches}"
-        def String[]branches = branches_raw.split("/|\[|\]")
+        def String[]branches = branches_raw.split("/")
         echo "BRANCHES = ${branches}"
         git branch: "${scm.branches}", url: "${repoURL}"
     }
