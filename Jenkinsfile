@@ -1,6 +1,6 @@
 node() {
     def repoURL = "https://github.com/adrianhardkor/stc.git"
-    def branches = ${scm.branches}
+    def branches = $scm.branches
     stage('git clone') {
         echo "\n\n\n GIT CLONE STAGE"
         echo "BRANCHES = ${branches}[0]"
