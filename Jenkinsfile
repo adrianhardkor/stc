@@ -2,6 +2,7 @@ node() {
     def repoURL = "https://github.com/adrianhardkor/stc.git"
     stage('git clone') {
         echo "\n\n\n GIT CLONE STAGE"
+        sh "rm -rf *"
         def branches = "${scm.branches}"
         if (branches.contains("master")) {
             git "${repoURL}"
