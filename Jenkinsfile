@@ -3,7 +3,7 @@ node() {
     stage('git clone') {
         echo "\n\n\n GIT CLONE STAGE"
         echo "BRANCHES = ${scm.branches}"
-        git branch: "main", url: "${repoURL}"
+        git branch: "${scm.branches}", url: "${repoURL}"
     }
     stage("Prepare Workspace") {
         sh """
