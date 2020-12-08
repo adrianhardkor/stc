@@ -1,4 +1,5 @@
 node() {
+    def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
     def repoURL = "https://github.com/adrianhardkor/stc.git"
     def os = System.properties['os.name'].toLowerCase()
     env.WORKSPACE_LOCAL = sh(returnStdout: true, script: 'pwd').trim()
@@ -27,6 +28,48 @@ node() {
                 pwd
                 ls -l
             """
+            try {
+               sh """
+                    export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
+                    printenv | grep STC_PRIVATE_INSTALL_DIR
+                    /usr/local/bin/behave -v --format json -o target/behave.json --junit
+                   ./be2cuc.py target/behave.json target/cucumber.json
+               """
+            } catch (error) {
+                echo "\n\n\n FAILURE FOUND -- CONTINUING TO XRAY-IMPORT"
+            } finally {
+                junit skipPublishingChecks: true, allowEmptyResults: true, keepLongStdio: true, testResults: 'reports/*.xml'
+            } 
         }
+    }
+    stage('Import results to Xray') {
+        echo "\n\n\n*** Entering the Import results to Xray Stage ***"
+        def description = "[TEST_BUILD_URL|${env.BUILD_URL}]"
+        def labels = '["regression","automated_regression"]'
+        def environment = "DEV"
+        def testExecutionFieldId = 10552
+        def testEnvironmentFieldName = "customfield_10372"
+        def projectKey = "Xray-Test"
+        def projectId = 10606
+        def xrayConnectorId = "${xrayConnectorId}"
+        def info = '''{
+                "fields": {
+                    "project": {
+                    "id": "''' + projectId + '''"
+                },
+                "labels":''' + labels + ''',
+                "description":"''' + description + '''",
+                "summary": "Testing Jenkins - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
+                "issuetype": {
+                "id": "''' + testExecutionFieldId + '''"
+                }
+                }
+                }'''
+            echo "${info}"
+            step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'target/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+        }
+    stage('cleanWs') {
+        echo "\n\nCleanWs"
+        cleanWs()
     }
 }
