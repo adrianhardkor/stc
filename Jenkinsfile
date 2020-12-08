@@ -8,6 +8,8 @@ node() {
         sh """
             pwd
             ls -l
+            printenv | grep master
+            printenv | grep main
         """
     }
 }
