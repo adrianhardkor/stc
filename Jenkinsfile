@@ -33,7 +33,7 @@ node() {
                     export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
                     printenv | grep STC_PRIVATE_INSTALL_DIR
                     /usr/local/bin/behave --format json -o target/behave.json --junit
-                    ./b2c_json.py behave.json cucumber.json
+                    ./b2c_json.py target/behave.json target/cucumber.json
                     ls -l target/
                """
             } catch (error) {
@@ -44,28 +44,30 @@ node() {
         }
     }
     stage('Import results to Xray') {
-         def xrayConnectorId = "${xrayConnectorId}"
-         def projectId = 10606
-         def testExecutionFieldId = 10552
-         def info = '''{
-       "fields": {
-          "project": {
-             "id": "''' + projectId + '''"
-          },
-          "labels":''' + labels + ''',
-          "summary": "Testing Jenkins - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
-          "issuetype": {
-             "id": "''' + testExecutionFieldId + '''"
-          },
-          "customfield_11807": [
-             "CALC-1200"
-          ]
-          }
-        }'''
-        echo "${info}"
-        steps {
-            step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
-        }
+        echo "\n\n\n*** Entering the Import results to Xray Stage ***"
+        def description = "[TEST_BUILD_URL|${env.BUILD_URL}]"
+        def labels = '["regression","automated_regression"]'
+        def environment = "DEV"
+        def testExecutionFieldId = 10552
+        def testEnvironmentFieldName = "customfield_10372"
+        def projectKey = "Xray-Test"
+        def projectId = 10606
+        def xrayConnectorId = "${xrayConnectorId}"
+        def info = '''{
+                "fields": {
+                    "project": {
+                    "id": "''' + projectId + '''"
+                },
+                "labels":''' + labels + ''',
+                "description":"''' + description + '''",
+                "summary": "Testing Jenkins - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
+                "issuetype": {
+                "id": "''' + testExecutionFieldId + '''"
+                }
+                }
+                }'''
+            echo "${info}"
+            step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'target/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"
