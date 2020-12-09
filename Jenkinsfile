@@ -45,7 +45,6 @@ node() {
     }
     stage('Import results to Xray') {
         echo "\n\n\n*** Entering the Import results to Xray Stage ***"
-        def description = "[Jenkins_BUILD_URL|${env.BUILD_URL}]"
         def labels = '["regression","automated_regression"]'
         def environment = "DEV"
         def testExecutionFieldId = 10552
@@ -59,7 +58,7 @@ node() {
           "project": {
              "id": "10606"
           },
-          "Description": description,
+          "Description": "[Jenkins_BUILD_URL|${env.BUILD_URL}]",
           "summary": "Sample Jenkins STC - Automated Regression Execution @ ${env.BUILD_TIME} ${environment}",
           "issuetype": {
              "id": "${testExecutionFieldId}"
