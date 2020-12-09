@@ -54,23 +54,19 @@ node() {
         def pk = 'XT'
         def projectId = 10606
         def xrayConnectorId = "${xrayConnectorId}"
-        def info = """{
-    "fields": {
-        "Description": "${description}",
-        "issuetype": {
-            "id": "${testExecutionFieldId}"
-        },
-        "labels": ${labels},
-        "project": {
-            "id": "${projectId}"
-        },
-        "summary": "Sample Jenkins STC - Automated Regression Execution @ ${env.BUILD_TIME} ${environment} "
-    }
-}"""
-            echo "*** THIS IS THE XRAY INFO ***"
-            echo "${info}"
-            echo "*** XrayImportBuilder ***"
-            step([$class: 'XrayImportBuilder', projectKey: pk, description: description, endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+        steps {   
+            step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: '''{
+       "fields": {
+          "project": {
+             "id": "10606"
+          },
+          "summary": "Sample Jenkins STC - Automated Regression Execution @ ${env.BUILD_TIME} ${environment}",
+          "issuetype": {
+             "id": "${testExecutionFieldId}"
+          }
+       }
+    }''', inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+        }
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"
