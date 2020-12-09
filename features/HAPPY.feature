@@ -1,5 +1,5 @@
 Feature: Test Ping Functionality
-  @demo @XT-141
+  @demo @XT-229
   Scenario: PING_EXPECTED_TRUE
     Given Spirent config built
     When I try to ping "10.44.0.100"
