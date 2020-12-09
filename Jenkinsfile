@@ -47,6 +47,7 @@ node() {
         echo "\n\n\n*** Entering the Import results to Xray Stage ***"
         def labels = '["regression","automated_regression"]'
         def environment = "DEV"
+        def description = "[TEST_BUILD_URL|${env.BUILD_URL}]"
         def testExecutionFieldId = 10552
         def testEnvironmentFieldName = "customfield_10372"
         def projectKey = "Xray-Test"
@@ -58,7 +59,7 @@ node() {
           "project": {
              "id": "10606"
           },
-          "Description": "[TEST_BUILD_URL|${env.BUILD_URL}]",
+          "Description": "${description}",
           "summary": "Sample Jenkins STC - Automated Regression Execution @ ${env.BUILD_TIME} ${environment}",
           "issuetype": {
              "id": "${testExecutionFieldId}"
@@ -66,7 +67,7 @@ node() {
        }
     }"""
         echo "${info}"
-        step([$class: 'XrayImportBuilder', projectKey: pk, endpointName: '/junit', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+        step([$class: 'XrayImportBuilder', projectKey: pk, Description: description, endpointName: '/junit', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"
