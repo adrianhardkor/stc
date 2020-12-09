@@ -54,8 +54,7 @@ node() {
         def pk = 'XT'
         def projectId = 10606
         def xrayConnectorId = "${xrayConnectorId}"
-        steps {   
-            step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: '''{
+        step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: '''{
        "fields": {
           "project": {
              "id": "10606"
@@ -66,7 +65,6 @@ node() {
           }
        }
     }''', inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
-        }
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"
