@@ -55,22 +55,22 @@ node() {
         def projectId = 10606
         def xrayConnectorId = "${xrayConnectorId}"
         def info = '''{
-                "fields": {
-                    "project": {
-                    "id": "''' + projectId + '''"
-                },
-                "labels":''' + labels + ''',
-                "description":"''' + description + '''",
-                "summary": "Sample Jenkins STC - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
-                "issuetype": {
-                "id": "''' + testExecutionFieldId + '''"
-                }
-                }
-                }'''
+    "fields": {
+        "description": "${description}",
+        "issuetype": {
+            "id": "${testExecutionFieldId}"
+        },
+        "labels": ${labels},
+        "project": {
+            "id": "${projectId}"
+        },
+        "summary": "Sample Jenkins STC - Automated Regression Execution @ ${env.BUILD_TIME} ${environment} "
+    }
+}'''
             echo "*** THIS IS THE XRAY INFO ***"
             echo "${info}"
             echo "*** XrayImportBuilder ***"
-            step([$class: 'XrayImportBuilder', projectKey: pk, description: description, endpointName: '/junit', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+            step([$class: 'XrayImportBuilder', projectKey: pk, description: description, endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"
