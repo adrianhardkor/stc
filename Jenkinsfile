@@ -56,7 +56,7 @@ node() {
         def xrayConnectorId = "${xrayConnectorId}"
         def info = """{
     "fields": {
-        "description": "${description}",
+        "Description": "${description}",
         "issuetype": {
             "id": "${testExecutionFieldId}"
         },
