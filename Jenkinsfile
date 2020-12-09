@@ -33,7 +33,6 @@ node() {
                     export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
                     printenv | grep STC_PRIVATE_INSTALL_DIR
                     /usr/local/bin/behave -v --format json -o target/behave.json --junit
-                   ./be2cuc.py target/behave.json target/cucumber.json
                    ls -l target/
                """
             } catch (error) {
