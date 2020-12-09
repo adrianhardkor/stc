@@ -58,7 +58,7 @@ node() {
           "project": {
              "id": "10606"
           },
-          "Description": "[Jenkins_BUILD_URL|${env.BUILD_URL}]",
+          "Description": "",
           "summary": "Sample Jenkins STC - Automated Regression Execution @ ${env.BUILD_TIME} ${environment}",
           "issuetype": {
              "id": "${testExecutionFieldId}"
