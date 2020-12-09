@@ -54,7 +54,7 @@ node() {
         def pk = 'XT'
         def projectId = 10606
         def xrayConnectorId = "${xrayConnectorId}"
-        def info = '''{
+        def info = """{
        "fields": {
           "project": {
              "id": "10606"
@@ -64,7 +64,7 @@ node() {
              "id": "${testExecutionFieldId}"
           }
        }
-    }'''
+    }"""
         echo "${info}"
         step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
