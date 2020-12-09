@@ -46,8 +46,7 @@ node() {
          def xrayConnectorId = "${xrayConnectorId}"
          def projectId = 10606
          def testExecutionFieldId = 10552
-         steps {
-            step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: '''{
+         def info = '''{
        "fields": {
           "project": {
              "id": "''' + projectId + '''"
@@ -60,8 +59,11 @@ node() {
           "customfield_11807": [
              "CALC-1200"
           ]
-       }
-    }''', inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+          }
+        }'''
+        echo "${info}"
+        steps {
+            step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
         }
     }
     stage('cleanWs') {
