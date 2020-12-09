@@ -32,8 +32,9 @@ node() {
                sh """
                     export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
                     printenv | grep STC_PRIVATE_INSTALL_DIR
-                    /usr/local/bin/behave -v --format json -o target/behave.json --junit
-                   ls -l target/
+                    /usr/local/bin/behave --format json -o target/behave.json --junit
+                    ./b2c_json.py behave.json cucumber.json
+                    ls -l target/
                """
             } catch (error) {
                 echo "\n\n\n FAILURE FOUND -- CONTINUING TO XRAY-IMPORT"

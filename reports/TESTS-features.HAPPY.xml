@@ -1,0 +1,78 @@
+<testsuite name="features.HAPPY.Test Ping Functionality" tests="1" errors="1" failures="0" skipped="0" time="0.003886"><testcase classname="features.HAPPY.Test Ping Functionality" name="PING_EXPECTED_TRUE" status="failed" time="0.003886"><error type="RuntimeError" message="in create: unable to create unknown class &quot;Port&quot;">
+<![CDATA[
+Failing step: Given Spirent config built ... failed in 0.004s
+Location: features/HAPPY.feature:4
+Traceback (most recent call last):
+  File "/home/akrygows/.local/lib/python3.8/site-packages/behave/model.py", line 1416, in run
+    match.run(runner.context)
+  File "/home/akrygows/.local/lib/python3.8/site-packages/behave/model.py", line 1858, in run
+    self.func(context, *args, **kwargs)
+  File "steps/traffictest.py", line 18, in step_impl
+    Stc.port_config(project,port)
+  File "lib/Stc.py", line 26, in port_config
+    Port_1 = stc.create("Port", under=hProject, \
+  File "lib/StcPython.py", line 75, in create
+    return self.stcInt.salCreate(_type, svec)
+RuntimeError: in create: unable to create unknown class "Port"
+
+Captured stdout:
+{
+    "Active": "true",
+    "Name": "StcSystem 1",
+    "Version": "5.16.0166.0000",
+    "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
+}
+Timestamp = '1639.46ms'
+
+
+{
+    "Active": "true",
+    "ConfigurationFileName": "Untitled.tcc",
+    "Name": "adrian",
+    "SelectedTechnologyProfiles": "dhcp",
+    "TestMode": "L2L3",
+    "children": "tags1",
+    "parent": "system1"
+}
+Timestamp = '1639.78ms'
+
+
+]]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @demo @XT-141
+  Scenario: PING_EXPECTED_TRUE
+    Given Spirent config built ... failed in 0.004s
+    When I try to ping "10.44.0.100" ... skipped in 0.000s
+    Then I expect response "true" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+{
+    "Active": "true",
+    "Name": "StcSystem 1",
+    "Version": "5.16.0166.0000",
+    "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
+}
+Timestamp = '1639.46ms'
+
+
+{
+    "Active": "true",
+    "ConfigurationFileName": "Untitled.tcc",
+    "Name": "adrian",
+    "SelectedTechnologyProfiles": "dhcp",
+    "TestMode": "L2L3",
+    "children": "tags1",
+    "parent": "system1"
+}
+Timestamp = '1639.78ms'
+
+
+
+]]>
+</system-out></testcase></testsuite>
