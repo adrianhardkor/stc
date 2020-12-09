@@ -54,7 +54,7 @@ node() {
         def pk = 'XT'
         def projectId = 10606
         def xrayConnectorId = "${xrayConnectorId}"
-        def info = '''{
+        def info = """{
     "fields": {
         "description": "${description}",
         "issuetype": {
@@ -66,7 +66,7 @@ node() {
         },
         "summary": "Sample Jenkins STC - Automated Regression Execution @ ${env.BUILD_TIME} ${environment} "
     }
-}'''
+}"""
             echo "*** THIS IS THE XRAY INFO ***"
             echo "${info}"
             echo "*** XrayImportBuilder ***"
