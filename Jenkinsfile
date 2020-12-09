@@ -45,12 +45,13 @@ node() {
     }
     stage('Import results to Xray') {
         echo "\n\n\n*** Entering the Import results to Xray Stage ***"
-        def description = "[TEST_BUILD_URL|${env.BUILD_URL}]"
+        def description = "[Jenkins_BUILD_URL|${env.BUILD_URL}]"
         def labels = '["regression","automated_regression"]'
         def environment = "DEV"
         def testExecutionFieldId = 10552
         def testEnvironmentFieldName = "customfield_10372"
         def projectKey = "Xray-Test"
+        def pk = 'XT'
         def projectId = 10606
         def xrayConnectorId = "${xrayConnectorId}"
         def info = '''{
@@ -60,14 +61,16 @@ node() {
                 },
                 "labels":''' + labels + ''',
                 "description":"''' + description + '''",
-                "summary": "Testing Jenkins - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
+                "summary": "Sample Jenkins STC - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
                 "issuetype": {
                 "id": "''' + testExecutionFieldId + '''"
                 }
                 }
                 }'''
+            echo "*** THIS IS THE XRAY INFO ***"
             echo "${info}"
-            step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'target/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+            echo "*** XrayImportBuilder ***"
+            step([$class: 'XrayImportBuilder', projectKey: pk, description: description, endpointName: '/junit', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"
