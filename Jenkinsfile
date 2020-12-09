@@ -44,31 +44,27 @@ node() {
         }
     }
     stage('Import results to Xray') {
-        echo "\n\n\n*** Entering the Import results to Xray Stage ***"
-        def description = "[TEST_BUILD_URL|${env.BUILD_URL}]"
-        def labels = '["regression","automated_regression"]'
-        def environment = "DEV"
-        def testExecutionFieldId = 10552
-        def testEnvironmentFieldName = "customfield_10372"
-        def projectKey = "Xray-Test"
-        def projectId = 10606
-        def xrayConnectorId = "${xrayConnectorId}"
-        def info = '''{
-                "fields": {
-                    "project": {
-                    "id": "''' + projectId + '''"
-                },
-                "labels":''' + labels + ''',
-                "description":"''' + description + '''",
-                "summary": "Testing Jenkins - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
-                "issuetype": {
-                "id": "''' + testExecutionFieldId + '''"
-                }
-                }
-                }'''
-            echo "${info}"
-            step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+         def xrayConnectorId = "${xrayConnectorId}"
+         def projectId = 10606
+         def testExecutionFieldId = 10552
+         steps {
+            step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: '''{
+       "fields": {
+          "project": {
+             "id": "''' + projectId + '''"
+          },
+          "labels":''' + labels + ''',
+          "summary": "Testing Jenkins - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
+          "issuetype": {
+             "id": "''' + testExecutionFieldId + '''"
+          },
+          "customfield_11807": [
+             "CALC-1200"
+          ]
+       }
+    }''', inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
         }
+    }
     stage('cleanWs') {
         echo "\n\nCleanWs"
         cleanWs()
