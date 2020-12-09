@@ -66,7 +66,7 @@ node() {
        }
     }"""
         echo "${info}"
-        step([$class: 'XrayImportBuilder', endpointName: '/junit/multipart', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+        step([$class: 'XrayImportBuilder', endpointName: '/junit', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"
