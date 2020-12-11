@@ -1,16 +1,16 @@
-<testsuite name="features.HAPPY.Test Ping Functionality" tests="1" errors="1" failures="0" skipped="0" time="0.009846" timestamp="2020-12-11T17:27:38.705689" hostname="wopr-sb"><testcase classname="features.HAPPY.Test Ping Functionality" name="PING_EXPECTED_TRUE" status="failed" time="0.009846"><error type="RuntimeError" message="in create: unable to create unknown class &quot;Port&quot;">
+<testsuite errors="1" failures="0" hostname="wopr-sb" name="features.HAPPY.Test Ping Functionality" skipped="0" tests="1" time="0.005437" timestamp="2020-12-11T23:22:40.173029"><testcase classname="features.HAPPY.Test Ping Functionality" name="PING_EXPECTED_TRUE" status="failed" time="0.005437"><error message="in create: unable to create unknown class &quot;Port&quot;" type="RuntimeError">
 <![CDATA[
-Failing step: Given Spirent config built ... failed in 0.010s
+Failing step: Given Spirent config built ... failed in 0.005s
 Location: features/HAPPY.feature:4
 Traceback (most recent call last):
-  File "/usr/lib/python3/dist-packages/behave/model.py", line 1329, in run
+  File "/etc/.pyenv/versions/3.6.8/lib/python3.6/site-packages/behave/model.py", line 1329, in run
     match.run(runner.context)
-  File "/usr/lib/python3/dist-packages/behave/matchers.py", line 98, in run
+  File "/etc/.pyenv/versions/3.6.8/lib/python3.6/site-packages/behave/matchers.py", line 98, in run
     self.func(context, *args, **kwargs)
   File "steps/traffictest.py", line 19, in step_impl
     Stc.port_config(project,port)
-  File "lib/Stc.py", line 30, in port_config
-    Port_1 = stc.create("Port", under=hProject, \
+  File "lib/Stc.py", line 43, in port_config
+    Name="Port @ " + portname)
   File "lib/StcPython.py", line 75, in create
     return self.stcInt.salCreate(_type, svec)
 RuntimeError: in create: unable to create unknown class "Port"
@@ -22,7 +22,7 @@ Captured stdout:
     "Version": "5.16.0166.0000",
     "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
 }
-Timestamp = '1441.78ms'
+Timestamp = '1154.27ms'
 
 
 {
@@ -34,14 +34,14 @@ Timestamp = '1441.78ms'
     "children": "tags1",
     "parent": "system1"
 }
-Timestamp = '1442.62ms']]>
+Timestamp = '1154.89ms']]>
 </error><system-out>
 <![CDATA[
 @scenario.begin
 
   @demo @XT-229
   Scenario: PING_EXPECTED_TRUE
-    Given Spirent config built ... failed in 0.010s
+    Given Spirent config built ... failed in 0.005s
     When I try to ping "10.44.0.100" ... skipped in 0.000s
     Then I expect response "true" ... skipped in 0.000s
 
@@ -55,7 +55,7 @@ Captured stdout:
     "Version": "5.16.0166.0000",
     "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
 }
-Timestamp = '1441.78ms'
+Timestamp = '1154.27ms'
 
 
 {
@@ -67,7 +67,7 @@ Timestamp = '1441.78ms'
     "children": "tags1",
     "parent": "system1"
 }
-Timestamp = '1442.62ms'
+Timestamp = '1154.89ms'
 
 
 

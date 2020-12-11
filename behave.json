@@ -1,0 +1,85 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "features/HAPPY.feature:3",
+      "name": "PING_EXPECTED_TRUE",
+      "status": "failed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/HAPPY.feature:4",
+          "match": {
+            "arguments": [],
+            "location": "steps/traffictest.py:14"
+          },
+          "name": "Spirent config built",
+          "result": {
+            "duration": 0.0053098201751708984,
+            "error_message": [
+              "Traceback (most recent call last):",
+              "  File \"/etc/.pyenv/versions/3.6.8/lib/python3.6/site-packages/behave/model.py\", line 1329, in run",
+              "    match.run(runner.context)",
+              "  File \"/etc/.pyenv/versions/3.6.8/lib/python3.6/site-packages/behave/matchers.py\", line 98, in run",
+              "    self.func(context, *args, **kwargs)",
+              "  File \"steps/traffictest.py\", line 19, in step_impl",
+              "    Stc.port_config(project,port)",
+              "  File \"lib/Stc.py\", line 43, in port_config",
+              "    Name=\"Port @ \" + portname)",
+              "  File \"lib/StcPython.py\", line 75, in create",
+              "    return self.stcInt.salCreate(_type, svec)",
+              "RuntimeError: in create: unable to create unknown class \"Port\"",
+              "",
+              "Captured stdout:",
+              "{",
+              "    \"Active\": \"true\",",
+              "    \"Name\": \"StcSystem 1\",",
+              "    \"Version\": \"5.16.0166.0000\",",
+              "    \"children\": \"activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1\"",
+              "}",
+              "Timestamp = '1129.1ms'",
+              "",
+              "",
+              "{",
+              "    \"Active\": \"true\",",
+              "    \"ConfigurationFileName\": \"Untitled.tcc\",",
+              "    \"Name\": \"adrian\",",
+              "    \"SelectedTechnologyProfiles\": \"dhcp\",",
+              "    \"TestMode\": \"L2L3\",",
+              "    \"children\": \"tags1\",",
+              "    \"parent\": \"system1\"",
+              "}",
+              "Timestamp = '1129.66ms'"
+            ],
+            "status": "failed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/HAPPY.feature:5",
+          "name": "I try to ping \"10.44.0.100\"",
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/HAPPY.feature:6",
+          "name": "I expect response \"true\"",
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        "demo",
+        "XT-229"
+      ],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/HAPPY.feature:1",
+  "name": "Test Ping Functionality",
+  "status": "failed",
+  "tags": []
+}
+]

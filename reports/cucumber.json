@@ -1,0 +1,69 @@
+[
+{
+  "description": "",
+  "elements": [
+    {
+      "description": "",
+      "id": "test-ping-functionality;ping_expected_true",
+      "keyword": "Scenario",
+      "line": 3,
+      "location": "features/HAPPY.feature:3",
+      "name": "PING_EXPECTED_TRUE",
+      "steps": [
+        {
+          "keyword": "Given",
+          "line": 4,
+          "match": {
+            "location": "steps/traffictest.py:14"
+          },
+          "name": "Spirent config built",
+          "result": {
+            "duration": 5436897,
+            "error_message": "Traceback (most recent call last):\n  File \"/etc/.pyenv/versions/3.6.8/lib/python3.6/site-packages/behave/model.py\", line 1329, in run\n    match.run(runner.context)\n  File \"/etc/.pyenv/versions/3.6.8/lib/python3.6/site-packages/behave/matchers.py\", line 98, in run\n    self.func(context, *args, **kwargs)\n  File \"steps/traffictest.py\", line 19, in step_impl\n    Stc.port_config(project,port)\n  File \"lib/Stc.py\", line 43, in port_config\n    Name=\"Port @ \" + portname)\n  File \"lib/StcPython.py\", line 75, in create\n    return self.stcInt.salCreate(_type, svec)\nRuntimeError: in create: unable to create unknown class \"Port\"\n\nCaptured stdout:\n{\n    \"Active\": \"true\",\n    \"Name\": \"StcSystem 1\",\n    \"Version\": \"5.16.0166.0000\",\n    \"children\": \"activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1\"\n}\nTimestamp = '1154.27ms'\n\n\n{\n    \"Active\": \"true\",\n    \"ConfigurationFileName\": \"Untitled.tcc\",\n    \"Name\": \"adrian\",\n    \"SelectedTechnologyProfiles\": \"dhcp\",\n    \"TestMode\": \"L2L3\",\n    \"children\": \"tags1\",\n    \"parent\": \"system1\"\n}\nTimestamp = '1154.89ms'",
+            "status": "failed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "line": 5,
+          "name": "I try to ping \"10.44.0.100\"",
+          "result": {
+            "duration": 0,
+            "status": "skipped"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "line": 6,
+          "name": "I expect response \"true\"",
+          "result": {
+            "duration": 0,
+            "status": "skipped"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        {
+          "line": 2,
+          "name": "demo"
+        },
+        {
+          "line": 2,
+          "name": "XT-229"
+        }
+      ],
+      "type": "scenario"
+    }
+  ],
+  "id": "test-ping-functionality",
+  "keyword": "Feature",
+  "line": 1,
+  "name": "Test Ping Functionality",
+  "status": "failed",
+  "tags": [],
+  "uri": "features/HAPPY.feature"
+}
+]
