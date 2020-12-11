@@ -1,9 +1,7 @@
 node() {
-
-    def repoURL = "https://github.com/bford62/Bob-STC.git"
-
-    def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
-    def os = System.properties['os.name'].toLowerCase()
+	def repoURL = "https://github.com/bford62/Bob-STC.git"
+	def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
+	def os = System.properties['os.name'].toLowerCase()
 
     stage("Prepare Workspace") {
         echo "*** Prepare Workspace ***"
@@ -40,8 +38,7 @@ node() {
             try {
                sh """
                     export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
-					cd $env.WORKSPACE_LOCAL
-                    /var/lib/jenkins/.pyenv/shims/behave -f cucumber -o reports/cucumber.json --junit --format=json -o target/behave.json --junit
+                    /var/lib/jenkins/.pyenv/shims/behave -f cucumber -o reports/cucumber.json --junit
                """
             } catch (error) {
                 echo "\n\n\n FAILURE FOUND -- CONTINUING TO XRAY-IMPORT"
@@ -75,14 +72,7 @@ node() {
                 }
             }
         }'''
-
-        echo info
-
-        step([$class: 'XrayImportBuilder', 
-        endpointName: '/cucumber/multipart', 
-        importFilePath: 'reports/cucumber.json', 
-        importInfo: info, 
-        inputInfoSwitcher: 'fileContent', 
-        serverInstance: xrayConnectorId])
+		echo info
+        	step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'reports/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
 }
