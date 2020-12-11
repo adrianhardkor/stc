@@ -32,9 +32,10 @@ node() {
                sh """
                     export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
                     printenv | grep STC_PRIVATE_INSTALL_DIR
-                    /usr/local/bin/behave --format json -o target/behave.json --junit
-                    ./b2c_json.py target/behave.json target/cucumber.json
-                    ls -l target/
+                    export PYTHONPATH=:.:/usr/lib/python3/dist-packages
+                    printenv | grep PYTHONPATH
+                    behave --format=formatters.cucumber_json:PrettyCucumberJSONFormatter -o target/cucumber.json --junit
+                    echo BEHAVE_RAN
                """
             } catch (error) {
                 echo "\n\n\n FAILURE FOUND -- CONTINUING TO XRAY-IMPORT"
@@ -67,7 +68,7 @@ node() {
        }
     }"""
         echo "${info}"
-        step([$class: 'XrayImportBuilder', projectKey: pk, Description: description, endpointName: '/junit', importFilePath: 'reports/*.xml', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
+        step([$class: 'XrayImportBuilder', projectKey: pk, Description: description, endpointName: '/cucumber/multipart', importFilePath: 'target/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
     }
     stage('cleanWs') {
         echo "\n\nCleanWs"

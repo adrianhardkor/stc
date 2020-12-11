@@ -1,6 +1,6 @@
-<testsuite name="features.HAPPY.Test Ping Functionality" tests="1" errors="1" failures="0" skipped="0" time="0.004705" timestamp="2020-12-11T17:09:59.726417" hostname="wopr-sb"><testcase classname="features.HAPPY.Test Ping Functionality" name="PING_EXPECTED_TRUE" status="failed" time="0.004705"><error type="RuntimeError" message="in create: unable to create unknown class &quot;Port&quot;">
+<testsuite name="features.HAPPY.Test Ping Functionality" tests="1" errors="1" failures="0" skipped="0" time="0.009846" timestamp="2020-12-11T17:27:38.705689" hostname="wopr-sb"><testcase classname="features.HAPPY.Test Ping Functionality" name="PING_EXPECTED_TRUE" status="failed" time="0.009846"><error type="RuntimeError" message="in create: unable to create unknown class &quot;Port&quot;">
 <![CDATA[
-Failing step: Given Spirent config built ... failed in 0.005s
+Failing step: Given Spirent config built ... failed in 0.010s
 Location: features/HAPPY.feature:4
 Traceback (most recent call last):
   File "/usr/lib/python3/dist-packages/behave/model.py", line 1329, in run
@@ -22,7 +22,7 @@ Captured stdout:
     "Version": "5.16.0166.0000",
     "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
 }
-Timestamp = '1445.39ms'
+Timestamp = '1441.78ms'
 
 
 {
@@ -34,14 +34,14 @@ Timestamp = '1445.39ms'
     "children": "tags1",
     "parent": "system1"
 }
-Timestamp = '1445.88ms']]>
+Timestamp = '1442.62ms']]>
 </error><system-out>
 <![CDATA[
 @scenario.begin
 
   @demo @XT-229
   Scenario: PING_EXPECTED_TRUE
-    Given Spirent config built ... failed in 0.005s
+    Given Spirent config built ... failed in 0.010s
     When I try to ping "10.44.0.100" ... skipped in 0.000s
     Then I expect response "true" ... skipped in 0.000s
 
@@ -55,7 +55,7 @@ Captured stdout:
     "Version": "5.16.0166.0000",
     "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
 }
-Timestamp = '1445.39ms'
+Timestamp = '1441.78ms'
 
 
 {
@@ -67,7 +67,7 @@ Timestamp = '1445.39ms'
     "children": "tags1",
     "parent": "system1"
 }
-Timestamp = '1445.88ms'
+Timestamp = '1442.62ms'
 
 
 
