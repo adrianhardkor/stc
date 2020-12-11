@@ -245,7 +245,7 @@ class CucumberJSONFormatter(Formatter):
 # -----------------------------------------------------------------------------
 # CLASS: PrettyJSONFormatter
 # -----------------------------------------------------------------------------
-class PrettyCucumberJSONFormatter(CucumberJSONFormatter):
+class PrettyCucumberJSONFormatter(Formatter):
     """
     Provides readable/comparable textual JSON output.
     """

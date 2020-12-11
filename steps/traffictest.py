@@ -6,6 +6,7 @@ sys.path.insert(1, 'lib/')
 import wcommon as wc
 wc.wcheader['packages']['wc'] = wc.__file__
 wc.jd(wc.wcheader)
+os.environ['STC_PRIVATE_INSTALL_DIR'] = '/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/'
 # os.environ['STC_PRIVATE_INSTALL_DIR'] = wc.argv_dict['STC_INSTALLDIR']
 import Stc
 

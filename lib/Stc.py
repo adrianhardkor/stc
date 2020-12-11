@@ -20,7 +20,11 @@ def init(project_name):
 		LocalActive="TRUE", \
 		Name=project_name)
 	wc.jd(stc.get(Project_1))
+	# stc.apply()
 	return(Project_1)
+
+def connect_attempt(ip):
+    return(stc.connect(ip))
 
 def port_config(hProject, portname):
 	Port_1 = stc.create("Port", under=hProject, \

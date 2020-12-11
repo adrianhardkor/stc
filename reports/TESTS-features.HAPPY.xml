@@ -1,0 +1,75 @@
+<testsuite name="features.HAPPY.Test Ping Functionality" tests="1" errors="1" failures="0" skipped="0" time="0.004705" timestamp="2020-12-11T17:09:59.726417" hostname="wopr-sb"><testcase classname="features.HAPPY.Test Ping Functionality" name="PING_EXPECTED_TRUE" status="failed" time="0.004705"><error type="RuntimeError" message="in create: unable to create unknown class &quot;Port&quot;">
+<![CDATA[
+Failing step: Given Spirent config built ... failed in 0.005s
+Location: features/HAPPY.feature:4
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/behave/model.py", line 1329, in run
+    match.run(runner.context)
+  File "/usr/lib/python3/dist-packages/behave/matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "steps/traffictest.py", line 19, in step_impl
+    Stc.port_config(project,port)
+  File "lib/Stc.py", line 30, in port_config
+    Port_1 = stc.create("Port", under=hProject, \
+  File "lib/StcPython.py", line 75, in create
+    return self.stcInt.salCreate(_type, svec)
+RuntimeError: in create: unable to create unknown class "Port"
+
+Captured stdout:
+{
+    "Active": "true",
+    "Name": "StcSystem 1",
+    "Version": "5.16.0166.0000",
+    "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
+}
+Timestamp = '1445.39ms'
+
+
+{
+    "Active": "true",
+    "ConfigurationFileName": "Untitled.tcc",
+    "Name": "adrian",
+    "SelectedTechnologyProfiles": "dhcp",
+    "TestMode": "L2L3",
+    "children": "tags1",
+    "parent": "system1"
+}
+Timestamp = '1445.88ms']]>
+</error><system-out>
+<![CDATA[
+@scenario.begin
+
+  @demo @XT-229
+  Scenario: PING_EXPECTED_TRUE
+    Given Spirent config built ... failed in 0.005s
+    When I try to ping "10.44.0.100" ... skipped in 0.000s
+    Then I expect response "true" ... skipped in 0.000s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+{
+    "Active": "true",
+    "Name": "StcSystem 1",
+    "Version": "5.16.0166.0000",
+    "children": "activeeventmanager1 commandstatusupdate1 userlogresult1 automationoptions project1 clientinfo1"
+}
+Timestamp = '1445.39ms'
+
+
+{
+    "Active": "true",
+    "ConfigurationFileName": "Untitled.tcc",
+    "Name": "adrian",
+    "SelectedTechnologyProfiles": "dhcp",
+    "TestMode": "L2L3",
+    "children": "tags1",
+    "parent": "system1"
+}
+Timestamp = '1445.88ms'
+
+
+
+]]>
+</system-out></testcase></testsuite>
