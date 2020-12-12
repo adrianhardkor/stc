@@ -23,8 +23,13 @@ node() {
 		def branch = scm.branches[0].name
 		echo "*** Re-Git Clone @ ${branch} ***""
 		def branches = "${scm.branches}"
-		if (branches.contains("master")) {git "${repoURL}"}
-		if (branches.contains("main")) {git branch: "main", url: "${repoURL}"}
+		if (branches.contains("master")) {
+			git "${repoURL}"
+		}
+		if (branches.contains("main")) {
+			git branch: "main", url: "${repoURL}"
+		}
+		echo "BRANCH = ${branch}"
 	}
     stage("BDD-Behave") {
         if (HUDSON_URL.contains("10.88.48.21")) {
