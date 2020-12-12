@@ -1,5 +1,4 @@
 node() {
-	def repoURL = "https://github.com/adrianhardkor/stc.git"
 	def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
 	def os = System.properties['os.name'].toLowerCase()
 	env.WORKSPACE_LOCAL = sh(returnStdout: true, script: 'pwd').trim()
@@ -17,22 +16,20 @@ node() {
 	passthruString = passthruString.replaceAll('\n',' jenkins_')
 
 	stage("Prepare Workspace") {
-		echo "\n\n\n"
-		echo "*** Prepare Workspace on ${SERVER_JENKINS} ***"
+		echo "\n\n\n*** Prepare Workspace on ${SERVER_JENKINS} ***"
 		cleanWs()
 		echo "Workspace set to: " + env.WORKSPACE_LOCAL
 		echo "Build time: " + env.BUILD_TIME
 		sh "ls -l"
 		def url = "${scm.userRemoteConfigs}"
-		echo "\n\n\n URL0 = " + url.split(" ")[0]
-		echo "\n\n\n URL1 = " + url.split(" ")[1]
-		echo "\n\n\n URL2 = " + url.split(" ")[2]
+		def repoURL = url.split(" ")[2]
 		def branches = scm.branches[0].name
 		def branch2 = branches.split("/")[1]
 		git branch: branch2, url: repoURL
 		sh "ls -l"
 	}
 	stage("BDD-Behave") {
+		echo "\n\n\n*** BDD-Behave-Python3 on ${SERVER_JENKINS} ***"
 		try {
 			sh """
 				export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
@@ -46,7 +43,7 @@ node() {
 		} 
 	}
 	stage('Import results to Xray') {
-		echo "*** Import Results to XRAY ***"
+		echo "\n\n*** Import Results to XRAY ***"
 		def description = "[STC_BUILD_URL|${env.BUILD_URL}]"
 		def labels = '["regression","automated_regression"]'
 		def environment = "DEV"
