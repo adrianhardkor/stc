@@ -2,6 +2,9 @@ node() {
 	echo env.GIT_COMMIT
 	echo env.GIT_BRANCH
 	echo env.GIT_REVISION
+	echo scm.branches
+	echo scm.extensions
+	echo scm.userRemoteConfigs
 	def repoURL = "https://github.com/adrianhardkor/stc.git"
 	def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
 	def os = System.properties['os.name'].toLowerCase()
@@ -17,14 +20,15 @@ node() {
 		echo "Build time: " + env.BUILD_TIME
 		sh "ls -l"
 		def branches = scm.branches[0].name
-		echo "BRANCHES = ${branches}"
+		def branch = branches.split("/")[1]
+		echo "BRANCHES = ${branch}"
 		if (branches.contains("master")) {
 			git "${repoURL}"
 		}
 		if (branches.contains("main")) {
 			git branch: "main", url: "${repoURL}"
 		}
-		echo "BRANCH = ${branches}"
+		echo "BRANCH = ${branch}"
 	}
     stage("BDD-Behave") {
         if (HUDSON_URL.contains("10.88.48.21")) {
