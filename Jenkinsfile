@@ -12,6 +12,7 @@ node() {
 	}
 	def passthruString = sh(script: "printenv", returnStdout: true)
 	passthruString = passthruString.replaceAll('\n',' jenkins_')
+	passthruString = "${passthruString}"
 	passthruString.append("SERVER_JENKINS=${SERVER_JENKINS}")
 	echo passthruString
 	stage("Prepare Workspace") {
