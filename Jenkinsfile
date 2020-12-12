@@ -5,17 +5,20 @@ node() {
 	env.WORKSPACE_LOCAL = sh(returnStdout: true, script: 'pwd').trim()
 	env.BUILD_TIME = "${BUILD_TIMESTAMP}"
 	def HUDSON_URL = "${env.HUDSON_URL}"
+	def SERVER_JENKINS = ""
 	if (HUDSON_URL.contains("10.88.48.21")) {
-		def SERVER_JENKINS = "WOPR-SB"
+		SERVER_JENKINS = "WOPR-SB"
 	} else {
-		def SERVER_JENKINS = "WOPR-PROD-JENKINS"
+		SERVER_JENKINS = "WOPR-PROD-JENKINS"
 	}
+	echo "SERVER JENKINS = ${SERVER_JENKINS}"
 	sh "export SERVER_JENKINS=${SERVER_JENKINS}"
 	def passthruString = sh(script: "printenv", returnStdout: true)
 	passthruString = passthruString.replaceAll('\n',' jenkins_')
 
 	stage("Prepare Workspace") {
-		echo "\n\n\n*** Prepare Workspace on ${SERVER_JENKINS} ***"
+		echo "\n\n\n"
+		echo "*** Prepare Workspace on ${SERVER_JENKINS} ***"
 		cleanWs()
 		echo "Workspace set to: " + env.WORKSPACE_LOCAL
 		echo "Build time: " + env.BUILD_TIME
