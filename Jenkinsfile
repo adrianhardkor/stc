@@ -1,34 +1,27 @@
 node() {
-	echo "${env}"
+	echo env.GIT_COMMIT
+	echo env.GIT_BRANCH
+	echo env.GIT_REVISION
 	def repoURL = "https://github.com/adrianhardkor/stc.git"
 	def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
 	def os = System.properties['os.name'].toLowerCase()
-
-    stage("Prepare Workspace") {
-        echo "*** Prepare Workspace ***"
-        cleanWs()
-        env.WORKSPACE_LOCAL = sh(returnStdout: true, script: 'pwd').trim()
-        passthruString = sh(script: "printenv", returnStdout: true)
-        passthruString = passthruString.replaceAll('\n',' jenkins_')       
-        env.BUILD_TIME = "${BUILD_TIMESTAMP}"
-        def HUDSON_URL = "${env.HUDSON_URL}"
-        echo "Workspace set to:" + env.WORKSPACE_LOCAL
-        echo "Build time:" + env.BUILD_TIME
-    }
-    stage('Checkout Self') {
-       echo "\n\n\n GIT CLONE STAGE"
-        sh """
-            rm -rf *
-            ls -l
-        """
-        def branches = "${scm.branches}"
-        if (branches.contains("master")) {
-            git "${repoURL}"
-        }
-        if (branches.contains("main")) {
-            git branch: "main", url: "${repoURL}"
-        }
-    }
+	def passthruString = sh(script: "printenv", returnStdout: true)
+	passthruString = passthruString.replaceAll('\n',' jenkins_')
+	env.WORKSPACE_LOCAL = sh(returnStdout: true, script: 'pwd').trim()
+	env.BUILD_TIME = "${BUILD_TIMESTAMP}"
+	def HUDSON_URL = "${env.HUDSON_URL}"
+	stage("Prepare Workspace") {
+		echo "\n\n*** Prepare Workspace ***"
+		cleanWs()
+		echo "Workspace set to:" + env.WORKSPACE_LOCAL
+		echo "Build time:" + env.BUILD_TIME
+		sh "ls -l"
+		def branch = scm.branches[0].name
+		echo "*** Re-Git Clone @ ${branch} ***""
+		def branches = "${scm.branches}"
+		if (branches.contains("master")) {git "${repoURL}"}
+		if (branches.contains("main")) {git branch: "main", url: "${repoURL}"}
+	}
     stage("BDD-Behave") {
         if (HUDSON_URL.contains("10.88.48.21")) {
             echo "\n\n\nBDD-Behave FOR SANDBOX"
