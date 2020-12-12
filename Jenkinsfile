@@ -17,13 +17,14 @@ node() {
 		echo "Build time: " + env.BUILD_TIME
 		sh "ls -l"
 		def branches = scm.branches[0].name
+		echo "BRANCHES = ${branches}"
 		if (branches.contains("master")) {
 			git "${repoURL}"
 		}
 		if (branches.contains("main")) {
 			git branch: "main", url: "${repoURL}"
 		}
-		echo "BRANCH = ${branch}"
+		echo "BRANCH = ${branches}"
 	}
     stage("BDD-Behave") {
         if (HUDSON_URL.contains("10.88.48.21")) {
