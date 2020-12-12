@@ -29,7 +29,7 @@ node() {
 		echo "\n\n\n*** BDD-Behave-Python3 on ${SERVER_JENKINS} ***"
 		try {
 			sh """
-				export SERVER_JENKINS=${SERVER_JENKINS}"
+				export SERVER_JENKINS=${SERVER_JENKINS}
 				export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
 				/var/lib/jenkins/.pyenv/shims/behave -f cucumber -o reports/cucumber.json --junit
 			"""
