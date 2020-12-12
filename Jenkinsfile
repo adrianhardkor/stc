@@ -12,9 +12,6 @@ node() {
 	}
 	def passthruString = sh(script: "printenv", returnStdout: true)
 	passthruString = passthruString.replaceAll('\n',' jenkins_')
-	passthruString = "${passthruString}"
-	passthruString.append("SERVER_JENKINS=${SERVER_JENKINS}")
-	echo passthruString
 	stage("Prepare Workspace") {
 		echo "\n\n\n*** Prepare Workspace on ${SERVER_JENKINS} ***"
 		cleanWs()
@@ -32,6 +29,7 @@ node() {
 		echo "\n\n\n*** BDD-Behave-Python3 on ${SERVER_JENKINS} ***"
 		try {
 			sh """
+				export SERVER_JENKINS=${SERVER_JENKINS}"
 				export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
 				/var/lib/jenkins/.pyenv/shims/behave -f cucumber -o reports/cucumber.json --junit
 			"""
