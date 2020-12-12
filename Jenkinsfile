@@ -10,11 +10,10 @@ node() {
 	} else {
 		SERVER_JENKINS = "WOPR-PROD-JENKINS"
 	}
-	echo "SERVER JENKINS = ${SERVER_JENKINS}"
 	sh "export SERVER_JENKINS=${SERVER_JENKINS}"
 	def passthruString = sh(script: "printenv", returnStdout: true)
 	passthruString = passthruString.replaceAll('\n',' jenkins_')
-
+	echo passthruString
 	stage("Prepare Workspace") {
 		echo "\n\n\n*** Prepare Workspace on ${SERVER_JENKINS} ***"
 		cleanWs()
