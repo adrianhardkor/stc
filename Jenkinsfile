@@ -17,12 +17,10 @@ node() {
 	stage("Prepare Workspace") {
 		echo "\n\n*** Prepare Workspace ***"
 		cleanWs()
-		echo "Workspace set to:" + env.WORKSPACE_LOCAL
-		echo "Build time:" + env.BUILD_TIME
+		echo "Workspace set to: " + env.WORKSPACE_LOCAL
+		echo "Build time: " + env.BUILD_TIME
 		sh "ls -l"
-		def branch = scm.branches[0].name
-		echo "*** Re-Git Clone @ ${branch} ***""
-		def branches = "${scm.branches}"
+		def branches = scm.branches[0].name
 		if (branches.contains("master")) {
 			git "${repoURL}"
 		}
