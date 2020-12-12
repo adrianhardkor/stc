@@ -23,7 +23,7 @@ node() {
 		echo "Workspace set to: " + env.WORKSPACE_LOCAL
 		echo "Build time: " + env.BUILD_TIME
 		sh "ls -l"
-		def url = scm.url
+		def url = scm.userRemoteConfigs
 		echo "\n\n\n URL = ${url}"
 		def branches = scm.branches[0].name
 		def branch2 = branches.split("/")[1]
