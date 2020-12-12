@@ -2,10 +2,6 @@ node() {
 	echo env.GIT_COMMIT
 	echo env.GIT_BRANCH
 	echo env.GIT_REVISION
-	echo scm.branches
-	echo scm.extensions
-	echo scm.userRemoteConfigs
-	
 	def repoURL = "https://github.com/adrianhardkor/stc.git"
 	def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
 	def os = System.properties['os.name'].toLowerCase()
