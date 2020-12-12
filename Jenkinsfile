@@ -1,7 +1,4 @@
 node() {
-	echo env.GIT_COMMIT
-	echo env.GIT_BRANCH
-	echo env.GIT_REVISION
 	def repoURL = "https://github.com/adrianhardkor/stc.git"
 	def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
 	def os = System.properties['os.name'].toLowerCase()
@@ -11,21 +8,14 @@ node() {
 	env.BUILD_TIME = "${BUILD_TIMESTAMP}"
 	def HUDSON_URL = "${env.HUDSON_URL}"
 	stage("Prepare Workspace") {
-		echo "\n\n*** Prepare Workspace ***"
+		echo "\n\n\n*** Prepare Workspace ***"
 		cleanWs()
 		echo "Workspace set to: " + env.WORKSPACE_LOCAL
 		echo "Build time: " + env.BUILD_TIME
 		sh "ls -l"
 		def branches = scm.branches[0].name
-		def branch = branches.split("/")[1]
-		echo "BRANCHES = ${branch}"
-		if (branches.contains("master")) {
-			git "${repoURL}"
-		}
-		if (branches.contains("main")) {
-			git branch: "main", url: "${repoURL}"
-		}
-		echo "BRANCH = ${branch}"
+		def branch2 = branches.split("/")[1]
+		git branch: branch2, url: repoURL
 	}
     stage("BDD-Behave") {
         if (HUDSON_URL.contains("10.88.48.21")) {
