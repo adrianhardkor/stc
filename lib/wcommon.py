@@ -52,7 +52,7 @@ def now():
 
 def jd(mydict):
     # json.dumps shorthand
-    out = json.dumps(mydict, sort_keys=True, indent=4)
+    out = json.dumps(mydict, sort_keys=True, indent=2)
     print(out)
     pairprint('Timestamp',fullRuntime())
     print('\n')
@@ -865,8 +865,11 @@ def add_pkgs():
     output = {}
     try:
         from pip._internal.operations import freeze
-    except ImportError:  # pip < 10.0
-        from pip.operations import freeze
+    except Exception:
+        try:
+                from pip.operations import freeze
+        except Exception:
+                return(output)
     for pkg in freeze.freeze():
         pkg = pkg.split('==')
         if pkg[0] in packages:
