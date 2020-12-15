@@ -2,25 +2,15 @@ import wcommon as wc
 from StcPython import StcPython
 stc = StcPython()
 def init(project_name):
-	global hPhysical
-	global Project_1
-	if 'Project_1' in locals() or 'Project_1' in globals():
-		return(Project_1)
-	system_time = wc.timer_index_start()
 	system1 = "system1"
 	stc.config('system1', \
 		InSimulationMode="FALSE", \
 		UseSmbMessaging="FALSE", \
-		IsLoadingFromConfiguration="TRUE", \
 		ApplicationName="TestCenter", \
 		TSharkPath="", \
 		Active="TRUE", \
 		LocalActive="TRUE", \
 		Name="StcSystem 1")
-	hPhysical = stc.create('PhysicalChassisManager', under='system1')
-	# hPhysical = stc.get(hPhysical, 'physicalchassis')
-	wc.pairprint('\n\nBuilt System', wc.timer_index_since(system_time))
-	project_time = wc.timer_index_start()
 	wc.jd(stc.get('system1'))
 	Project_1 = stc.create("Project", \
 		TableViewData="", \
@@ -29,22 +19,14 @@ def init(project_name):
 		Active="TRUE", \
 		LocalActive="TRUE", \
 		Name=project_name)
-	wc.pairprint('\n\nBuilt Project: ' + project_name, wc.timer_index_since(project_time))
 	wc.jd(stc.get(Project_1))
+	# stc.apply()
 	return(Project_1)
 
-def connectChassis(ip):
-	global hPhysical
-	connect_time = wc.timer_index_start()
-	result = stc.connect(ip)
-	stc.apply()
-	wc.pairprint('\n\nConnect to CHASSIS: ' + ip, wc.timer_index_since(connect_time))
-	# wc.jd(stc.get(result))
-	wc.jd(stc.get(hPhysical))
-	return(result)
+def connect_attempt(ip):
+    return(stc.connect(ip))
 
 def port_config(hProject, portname):
-	portbuild_time = wc.timer_index_start()
 	Port_1 = stc.create("Port", under=hProject, \
 		location = portname, \
 		UseDefaultHost="TRUE", \
@@ -59,11 +41,10 @@ def port_config(hProject, portname):
 		Active="TRUE", \
 		LocalActive="TRUE", \
 		Name="Port @ " + portname)
-	wc.pairprint('\n\nBuilt Port: ' + portname, wc.timer_index_since(portbuild_time))
-	return(Port_1)
 
 def config(Project_1, resultsDir,portLocations):
     # StcTest.config( sys.path[0], [ '//10.44.0.21/9/1', '//10.44.0.21/9/11', '//10.44.0.21/9/12' ] )
+
     Tags_1 = (stc.get( Project_1, 'children-Tags' )).split(' ')[0]
     stc.config(Tags_1, \
     Active="TRUE", \

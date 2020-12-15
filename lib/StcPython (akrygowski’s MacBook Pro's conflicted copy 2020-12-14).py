@@ -11,8 +11,7 @@ class StcPython(object):
         self.stcInt = None
         if sys.hexversion < 0x020605F0 or sys.hexversion > 0x030608F0 \
         or (sys.hexversion > 0x030404F0 and sys.hexversion < 0x030509F0):
-             print('This version of STC requires Python version 2.6.5 upto 3.6.9 \
-excluding 3.5 variants')
+             print('This version of STC requires Python version 2.6.5 upto 3.6.9 excluding 3.5 variants')
         # STC_PRIVATE_INSTALL_DIR may either be set as a system environment
         # variable or directly in the script.
         # Windows example:
