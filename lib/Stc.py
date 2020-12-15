@@ -5,6 +5,7 @@ def init(project_name):
 	global hPhysical
 	global Project_1
 	if 'Project_1' in locals() or 'Project_1' in globals():
+		print("Already Found Project")
 		return(Project_1)
 	system_time = wc.timer_index_start()
 	system1 = "system1"
@@ -17,11 +18,11 @@ def init(project_name):
 		Active="TRUE", \
 		LocalActive="TRUE", \
 		Name="StcSystem 1")
-	hPhysical = stc.create('PhysicalChassisManager', under='system1')
 	# hPhysical = stc.get(hPhysical, 'physicalchassis')
 	wc.pairprint('\n\nBuilt System', wc.timer_index_since(system_time))
 	project_time = wc.timer_index_start()
 	wc.jd(stc.get('system1'))
+	hPhysical = stc.create('PhysicalChassisManager', under='system1')
 	Project_1 = stc.create("Project", \
 		TableViewData="", \
 		TestMode="L2L3", \
