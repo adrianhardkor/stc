@@ -5,9 +5,6 @@ stc = StcPython()
 def sApply():
     runner("stc.apply()")
 
-def sGet(handle):
-    return(runner("stc.get({args['handle]})", {'handle',handle}))
-
 def get_object(name):
    return sys._getframe(1).f_locals[name]
 
@@ -15,7 +12,7 @@ def runner(command, args=[]):
     global hPhysical
     global Project_1
     result = exec(command)
-    wc.pairprint('\t' + command,result)
+    wc.pairprint('>>>>  ' + command,result)
     return(result)
 
 def init(project_name):
@@ -37,26 +34,26 @@ def init(project_name):
 		Name='StcSystem 1')")
 	wc.pairprint('\n\nBuilt System', wc.timer_index_since(system_time))
 	project_time = wc.timer_index_start()
-	wc.jd(runner("stc.get('system1')"))
-	Project_1 = runner("stc.create('Project', \
+	wc.jd(stc.get('system1'))
+	Project_1 = stc.create('Project', \
 		TableViewData='', \
 		TestMode='L2L3', \
 		SelectedTechnologyProfiles='dhcp', \
 		Active='TRUE', \
 		LocalActive='TRUE', \
-		Name={args['project_name']})", {'project_name':project_name})
+		Name=project_name)
 	wc.pairprint('\n\nBuilt Project: ' + project_name, wc.timer_index_since(project_time))
-	wc.jd(sGet(Project_1))
+	wc.jd(stc.get(Project_1))
 	return(Project_1)
 
 def connectChassis(ip):
 	global hPhysical
 	connect_time = wc.timer_index_start()
-	result = runner("stc.connect({args['ip']}", {'ip':ip})
+	result = stc.connect(ip)
 	sApply()
-	hPhysical = runner("stc.create('PhysicalChassisManager', under='system1')")
+	hPhysical = stc.create('PhysicalChassisManager', under='system1')
 	wc.pairprint('\n\nConnect to CHASSIS: ' + ip, wc.timer_index_since(connect_time))
-	wc.jd(sGet(hPhysical))
+	wc.jd(stc.get(hPhysical))
 	return(result)
 
 def port_config(hProject, portname):

@@ -1,85 +1,131 @@
-import wcommon as wc
+# Spirent TestCenter Logic Script
+# Generated on Tue May 12 15:36:18 2020 by bford
+# Framework ver. 5.08.9016.0000
+#
+# Comments: 
+# 
+#
+# This logic script contains the following routines invoked from the
+# BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12.py script.
+
+
+
+import datetime
+datetime.datetime.now()
+
+print("Loading STC and setting up ports\n")
+
+# Load Spirent TestCenter
 from StcPython import StcPython
 stc = StcPython()
 
-def sApply():
-    runner("stc.apply()")
+#    init - set the logging level and logging location (stdout).
+#           Possible logLevel values are: 
+#             DEBUG - Display DEBUG, INFO, WARN, and ERROR messages
+#             INFO  - Display INFO, WARN, and ERROR messages
+#             WARN  - Display WARN and ERROR messages
+#             ERROR - Display only ERROR messages
+#
+#           Possible values for logTo are "stdout" or a file name (can include
+#           the path). Use forward slashes between directory names.
+def init():
+    stc.config('automationoptions', logTo='stdout', logLevel='WARN')
 
-def sGet(handle):
-    return(runner("stc.get({args['handle]})", {'handle',handle}))
+#    config - load the configuration into memory. The port locations
+#             are taken from the XML file but may be passed in from the
+#             launcher script. The XML config file may be passed in from
+#             the launcher script as well.
+#
+#           - set the location for results files.
+#             Possible values are: 
+#               INSTALL_DIR - Spirent TestCenter installation directory.
+#               CURRENT_WORKING_DIR - Current working directory. This 
+#                   is the directory that Spirent TestCenter currently
+#                   has open.
+#               USER_WORKING_DIR - User working directory.
+#               CURRENT_CONFIG_DIR - Current configuration directory. 
+#                   This is the directory where the saved or loaded
+#                   .xml or .tcc file is located. If no .xml or .tcc 
+#                   file has been saved or loaded, files are saved
+#                   to the user working directory.
+#
+#             The location of the results files can be modified in the
+#             launcher file. The saveResultsRelativeTo parameter sets a path 
+#             that is prepended to the value of the ResultsDirectory 
+#             parameter. To set an fully qualified (absolute) path for 
+#             results, set the ResultsDirectory parameter and set 
+#             SaveResultsRelativeTo to NONE.
+#
+#           - set up the sequencer. Currently sets the sequencer
+#             to stop on any error.  Other options are IGNORE_ERROR and 
+#             PAUSE_ON_ERROR.
+def config(resultsDir, portLocations):
+    stc.config('system1',IsLoadingFromConfiguration='true')
 
-def get_object(name):
-   return sys._getframe(1).f_locals[name]
+    system1 = "system1"
+    stc.config('system1', \
+    InSimulationMode="FALSE", \
+    UseSmbMessaging="FALSE", \
+    ApplicationName="TestCenter", \
+    TSharkPath="", \
+    Active="TRUE", \
+    LocalActive="TRUE", \
+    Name="StcSystem 1")
 
-def runner(command, args=[]):
-    global hPhysical
-    global Project_1
-    result = exec(command)
-    wc.pairprint('\t' + command,result)
-    return(result)
+    Project_1 = stc.create("Project", \
+    TableViewData="", \
+    TestMode="L2L3", \
+    SelectedTechnologyProfiles="dhcp", \
+    ConfigurationFileName="BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12.py", \
+    Active="TRUE", \
+    LocalActive="TRUE", \
+    Name="Project 1")
 
-def init(project_name):
-	global hPhysical
-	global Project_1
-	if 'Project_1' in locals() or 'Project_1' in globals():
-		print("Already Found Project")
-		return(Project_1)
-	system_time = wc.timer_index_start()
-	system1 = "system1"
-	runner("stc.config('system1', \
-		InSimulationMode='FALSE', \
-		UseSmbMessaging='FALSE', \
-		IsLoadingFromConfiguration='TRUE', \
-		ApplicationName='TestCenter', \
-		TSharkPath='', \
-		Active='TRUE', \
-		LocalActive='TRUE', \
-		Name='StcSystem 1')")
-	wc.pairprint('\n\nBuilt System', wc.timer_index_since(system_time))
-	project_time = wc.timer_index_start()
-	wc.jd(runner("stc.get('system1')"))
-	Project_1 = runner("stc.create('Project', \
-		TableViewData='', \
-		TestMode='L2L3', \
-		SelectedTechnologyProfiles='dhcp', \
-		Active='TRUE', \
-		LocalActive='TRUE', \
-		Name={args['project_name']})", {'project_name':project_name})
-	wc.pairprint('\n\nBuilt Project: ' + project_name, wc.timer_index_since(project_time))
-	wc.jd(sGet(Project_1))
-	return(Project_1)
+    Port_1 = stc.create("Port",under = Project_1, \
+    location= portLocations[0], \
+    UseDefaultHost="TRUE", \
+    AppendLocationToPortName="TRUE", \
+    Layer3Type="IPV4", \
+    PortGroupSize="1", \
+    TestModuleProfile="Default", \
+    IsFlexEthernetPort="FALSE", \
+    IsFlexEthernetPhy="FALSE", \
+    IsFlexEthernetClient="FALSE", \
+    IsPgaPort="TRUE", \
+    Active="TRUE", \
+    LocalActive="TRUE", \
+    Name="Port //9/1 [00:1F:12:B4:77:C0/xe-2/3/0]")
 
-def connectChassis(ip):
-	global hPhysical
-	connect_time = wc.timer_index_start()
-	result = runner("stc.connect({args['ip']}", {'ip':ip})
-	sApply()
-	hPhysical = runner("stc.create('PhysicalChassisManager', under='system1')")
-	wc.pairprint('\n\nConnect to CHASSIS: ' + ip, wc.timer_index_since(connect_time))
-	wc.jd(sGet(hPhysical))
-	return(result)
+    Port_2 = stc.create("Port",under = Project_1, \
+    location= portLocations[1], \
+    UseDefaultHost="TRUE", \
+    AppendLocationToPortName="TRUE", \
+    Layer3Type="IPV4", \
+    PortGroupSize="1", \
+    TestModuleProfile="Default", \
+    IsFlexEthernetPort="FALSE", \
+    IsFlexEthernetPhy="FALSE", \
+    IsFlexEthernetClient="FALSE", \
+    IsPgaPort="TRUE", \
+    Active="TRUE", \
+    LocalActive="TRUE", \
+    Name="Port //9/11")
 
-def port_config(hProject, portname):
-	portbuild_time = wc.timer_index_start()
-	Port_1 = runner("stc.create('Port', under={args['under']}, \
-		location = {args['portname']}, \
-		UseDefaultHost='TRUE', \
-		AppendLocationToPortName='TRUE', \
-		Layer3Type='IPV4', \
-		PortGroupSize='1', \
-		TestModuleProfile='Default', \
-		IsFlexEthernetPort='FALSE', \
-		IsFlexEthernetPhy='FALSE', \
-		IsFlexEthernetClient='FALSE', \
-		IsPgaPort='TRUE', \
-		Active='TRUE', \
-		LocalActive='TRUE', \
-		Name={args['name']}", {'under':hProject,'portname':portname,'name':"Port @ ' + portname"})
-	wc.pairprint('\n\nBuilt Port: ' + portname, wc.timer_index_since(portbuild_time))
-	return(Port_1)
+    Port_3 = stc.create("Port",under = Project_1, \
+    location= portLocations[2], \
+    UseDefaultHost="TRUE", \
+    AppendLocationToPortName="TRUE", \
+    Layer3Type="IPV4", \
+    PortGroupSize="1", \
+    TestModuleProfile="Default", \
+    IsFlexEthernetPort="FALSE", \
+    IsFlexEthernetPhy="FALSE", \
+    IsFlexEthernetClient="FALSE", \
+    IsPgaPort="TRUE", \
+    Active="TRUE", \
+    LocalActive="TRUE", \
+    Name="Port //9/12")
 
-def config(Project_1, resultsDir,portLocations):
-    # StcTest.config( sys.path[0], [ '//10.44.0.21/9/1', '//10.44.0.21/9/11', '//10.44.0.21/9/12' ] )
     Tags_1 = (stc.get( Project_1, 'children-Tags' )).split(' ')[0]
     stc.config(Tags_1, \
     Active="TRUE", \
@@ -13868,53 +13914,53 @@ def config(Project_1, resultsDir,portLocations):
     stc.config('system1',IsLoadingFromConfiguration='false')
 
     if len(portLocations) > 0:
-	cmdResult = stc.perform('GetObjects', ClassName='Port', Condition='IsVirtual=false')
-	ports = cmdResult['ObjectList'].split()
-	idx = 0
-	for port in ports:
-	    stc.config(port, location=portLocations[idx])
-	    idx+=1
+        cmdResult = stc.perform('GetObjects', ClassName='Port', Condition='IsVirtual=false')
+        ports = cmdResult['ObjectList'].split()
+        idx = 0
+        for port in ports:
+            stc.config(port, location=portLocations[idx])
+            idx+=1
 
     stc.config('project1.testResultSetting', saveResultsRelativeTo='NONE', resultsDirectory=resultsDir)
     stc.config('system1.sequencer', errorHandler='STOP_ON_ERROR')
 
 #    connect - perform the logical to physical port mapping, connect to the 
-#	      chassis' and reserve the ports. This routine performs the connect,
-#	      reserve, and logical to physical port mappings directly.
-#	      The port list is retrieved from the in-memory configuration.
+#              chassis' and reserve the ports. This routine performs the connect,
+#              reserve, and logical to physical port mappings directly.
+#              The port list is retrieved from the in-memory configuration.
 def connect():
     stc.perform('attachPorts')
 
 #    apply - apply writes the logical information held in memory on the 
-#	    workstation to the ports in the STC chassis'.
+#            workstation to the ports in the STC chassis'.
 def apply():
     stc.apply()
 
 #    run - subscribe to any results views located in the in-memory configuration
-#	  and execute the sequencer and return the test status from the 
-#	  command sequence, if any. Test status is set by the Stopped Reason
-#	  in the Stop Command Sequence command. This is a string value and 
-#	  can be anything. If there is no sequence defined or no Stop 
-#	  Command Sequence command is executed, then the test state is 
-#	  returned. Test state can take the values: NONE, PASSED or FAILED.
+#          and execute the sequencer and return the test status from the 
+#          command sequence, if any. Test status is set by the Stopped Reason
+#          in the Stop Command Sequence command. This is a string value and 
+#          can be anything. If there is no sequence defined or no Stop 
+#          Command Sequence command is executed, then the test state is 
+#          returned. Test state can take the values: NONE, PASSED or FAILED.
 def run():
     # Subscribe to results for result query BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12-0001-rxstreamsummaryresults
     stc.subscribe(parent='project1',
-		  resultParent='project1',
-		  configType='streamblock',
-		  resultType='rxstreamsummaryresults',
-		  filterList=(stc.get( 'system1', 'children-RxPortResultFilter' )).split(' ')[0] ,
-		  viewAttributeList='framecount sigframecount fcserrorframecount minlatency maxlatency droppedframecount droppedframepercent inorderframecount reorderedframecount duplicateframecount lateframecount prbsbiterrorcount prbsfilloctetcount ipv4checksumerrorcount tcpudpchecksumerrorcount framerate sigframerate fcserrorframerate droppedframerate droppedframepercentrate inorderframerate reorderedframerate duplicateframerate lateframerate prbsbiterrorrate prbsfilloctetrate ipv4checksumerrorrate tcpudpchecksumerrorrate bitrate shorttermavglatency avglatency prbsbiterrorratio l1bitcount l1bitrate prbserrorframecount prbserrorframerate aggregatedrxportcount portstrayframes bitcount shorttermavgjitter avgjitter minjitter maxjitter shorttermavginterarrivaltime avginterarrivaltime mininterarrivaltime maxinterarrivaltime inseqframecount outseqframecount inseqframerate outseqframerate histbin1count histbin2count histbin3count histbin4count histbin5count histbin6count histbin7count histbin8count histbin9count histbin10count histbin11count histbin12count histbin13count histbin14count histbin15count histbin16count ',
-		  interval='1', filenamePrefix='BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12-0001-rxstreamsummaryresults')
+                  resultParent='project1',
+                  configType='streamblock',
+                  resultType='rxstreamsummaryresults',
+                  filterList=(stc.get( 'system1', 'children-RxPortResultFilter' )).split(' ')[0] ,
+                  viewAttributeList='framecount sigframecount fcserrorframecount minlatency maxlatency droppedframecount droppedframepercent inorderframecount reorderedframecount duplicateframecount lateframecount prbsbiterrorcount prbsfilloctetcount ipv4checksumerrorcount tcpudpchecksumerrorcount framerate sigframerate fcserrorframerate droppedframerate droppedframepercentrate inorderframerate reorderedframerate duplicateframerate lateframerate prbsbiterrorrate prbsfilloctetrate ipv4checksumerrorrate tcpudpchecksumerrorrate bitrate shorttermavglatency avglatency prbsbiterrorratio l1bitcount l1bitrate prbserrorframecount prbserrorframerate aggregatedrxportcount portstrayframes bitcount shorttermavgjitter avgjitter minjitter maxjitter shorttermavginterarrivaltime avginterarrivaltime mininterarrivaltime maxinterarrivaltime inseqframecount outseqframecount inseqframerate outseqframerate histbin1count histbin2count histbin3count histbin4count histbin5count histbin6count histbin7count histbin8count histbin9count histbin10count histbin11count histbin12count histbin13count histbin14count histbin15count histbin16count ',
+                  interval='1', filenamePrefix='BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12-0001-rxstreamsummaryresults')
 
     # Subscribe to results for result query BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12-0002-txstreamresults
     stc.subscribe(parent='project1',
-		  resultParent='project1',
-		  configType='streamblock',
-		  resultType='txstreamresults',
-		  filterList='',
-		  viewAttributeList='framecount framerate bitrate expectedrxframecount l1bitcount l1bitrate streaminfo bitcount ',
-		  interval='1', filenamePrefix='BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12-0002-txstreamresults')
+                  resultParent='project1',
+                  configType='streamblock',
+                  resultType='txstreamresults',
+                  filterList='',
+                  viewAttributeList='framecount framerate bitrate expectedrxframecount l1bitcount l1bitrate streaminfo bitcount ',
+                  interval='1', filenamePrefix='BasicIPv4_Traffic_BiDirect_S9P1_toandfrom_S9P11S9P12-0002-txstreamresults')
 
     # Start the sequencer
     stc.perform('sequencerStart')
@@ -13924,7 +13970,7 @@ def run():
     return testState
 
 #    cleanup - release the ports, disconnect from the chassis' and reset 
-#	      the in-memory configuration.
+#              the in-memory configuration.
 def cleanup():
     stc.perform('chassisDisconnectAll')
     stc.perform('resetConfig')

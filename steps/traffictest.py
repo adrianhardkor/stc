@@ -14,12 +14,6 @@ STC_PRIVATE_INSTALL_DIR = '/opt/STC_5.16/Spirent_TestCenter_5.16/Spirent_TestCen
 os.environ['STC_PRIVATE_INSTALL_DIR'] = STC_PRIVATE_INSTALL_DIR
 sys.path.insert(1,STC_PRIVATE_INSTALL_DIR + 'API/Python/')
 import Stc
-project = Stc.init('traffictest.py')
-Stc.connectChassis(ARC)
-
-
-
-
 
 @given(u'Spirent config built')
 def step_impl(context):
