@@ -7,12 +7,9 @@ import wcommon as wc
 wc.jenkins_header(); # load inputs from Jenkinsfile
 wc.wcheader['packages']['wc'] = wc.__file__
 wc.jd(wc.wcheader)
-import Stc
-ARC = '10.88.240.60'
-WP = '10.44.0.21'
-STC_PRIVATE_INSTALL_DIR = '/opt/STC_5.16/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux'
-os.environ['STC_PRIVATE_INSTALL_DIR'] = STC_PRIVATE_INSTALL_DIR
-sys.path.insert(1,STC_PRIVATE_INSTALL_DIR + 'API/Python/')
+ARC = '10.88.240.60'; # CHASSIS2
+WP = '10.44.0.21'; # CHASSIS1
+os.environ['STC_PRIVATE_INSTALL_DIR'] = STC_PRIVATE_INSTALL_DIR = '/opt/STC_5.16/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux'
 import Stc
 
 @given(u'Spirent config built')

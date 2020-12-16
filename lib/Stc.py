@@ -2,18 +2,8 @@ import wcommon as wc
 from StcPython import StcPython
 stc = StcPython()
 
-def sApply():
-    runner("stc.apply()")
-
 def get_object(name):
    return sys._getframe(1).f_locals[name]
-
-def runner(command, args=[]):
-    global hPhysical
-    global Project_1
-    result = exec(command)
-    wc.pairprint('>>>>  ' + command,result)
-    return(result)
 
 def init(project_name):
 	global hPhysical
@@ -23,7 +13,7 @@ def init(project_name):
 		return(Project_1)
 	system_time = wc.timer_index_start()
 	system1 = "system1"
-	runner("stc.config('system1', \
+	stc.config('system1', \
 		InSimulationMode='FALSE', \
 		UseSmbMessaging='FALSE', \
 		IsLoadingFromConfiguration='TRUE', \
@@ -31,7 +21,7 @@ def init(project_name):
 		TSharkPath='', \
 		Active='TRUE', \
 		LocalActive='TRUE', \
-		Name='StcSystem 1')")
+		Name='StcSystem 1')
 	wc.pairprint('\n\nBuilt System', wc.timer_index_since(system_time))
 	project_time = wc.timer_index_start()
 	wc.jd(stc.get('system1'))
@@ -58,8 +48,8 @@ def connectChassis(ip):
 
 def port_config(hProject, portname):
 	portbuild_time = wc.timer_index_start()
-	Port_1 = runner("stc.create('Port', under={args['under']}, \
-		location = {args['portname']}, \
+	Port_1 = stc.create('Port', under=hProject, \
+		location = portname, \
 		UseDefaultHost='TRUE', \
 		AppendLocationToPortName='TRUE', \
 		Layer3Type='IPV4', \
@@ -71,6 +61,6 @@ def port_config(hProject, portname):
 		IsPgaPort='TRUE', \
 		Active='TRUE', \
 		LocalActive='TRUE', \
-		Name={args['name']}", {'under':hProject,'portname':portname,'name':"Port @ ' + portname"})
+		Name="Port @ ' + portname")
 	wc.pairprint('\n\nBuilt Port: ' + portname, wc.timer_index_since(portbuild_time))
 	return(Port_1)

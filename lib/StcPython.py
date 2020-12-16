@@ -4,6 +4,8 @@ import time
 import atexit
 from platform import python_version
 
+def slog(msg):
+    print(msg)
 
 class StcPython(object):
 
@@ -51,22 +53,25 @@ excluding 3.5 variants')
             self.stcInt = __import__('StcIntPython34')
         else:
             self.stcInt = __import__('StcIntPython36')
-
         os.chdir(runningDir)
 
     def apply(self):
+        slog('apply()')
         return self.stcInt.salApply()
 
     def config(self, _object, **kwargs):
+        slog('\t'.join(['config',str(_object),str(kwargs)]))
         svec = []
         StcPython._packKeyVal(svec, kwargs)
         return self.stcInt.salSet(_object, svec)
 
     def connect(self, *hosts):
+        slog('\t'.join(['connect',str(*hosts)]))
         svec = StcPython._unpackArgs(*hosts)
         return self.stcInt.salConnect(svec)
 
     def create(self, _type, **kwargs):
+        slog('\t'.join(['create',str(_type),str(kwargs)]))
         svec = []
         if _type.lower() != 'project':
             svec.append('-under')
@@ -76,13 +81,16 @@ excluding 3.5 variants')
         return self.stcInt.salCreate(_type, svec)
 
     def delete(self, handle):
+        slog('\t'.join(['delete',str(handle)]))
         return self.stcInt.salDelete(handle)
 
     def disconnect(self, *hosts):
+        slog('\t'.join(['disconnect',str(*hosts)]))
         svec = StcPython._unpackArgs(*hosts)
         return self.stcInt.salDisconnect(svec)
 
     def get(self, handle, *args):
+        slog('\t'.join(['get',str(handle),str(*args)]))
         svec = StcPython._unpackArgs(*args)
         svecDashes = []
         for i, attName in enumerate(svec):
@@ -121,6 +129,7 @@ excluding 3.5 variants')
         return self.stcInt.salLog(level, msg)
 
     def perform(self, _cmd, **kwargs):
+        slog('\t'.join(['perform',str(_cmd),str(kwargs)]))
         svec = []
         StcPython._packKeyVal(svec, kwargs)
         retSvec = self.stcInt.salPerform(_cmd, svec)
@@ -128,10 +137,12 @@ excluding 3.5 variants')
                                                                kwargs.keys())
 
     def release(self, *csps):
+        slog('\t'.join(['release',str(*csps)]))
         svec = StcPython._unpackArgs(*csps)
         return self.stcInt.salRelease(svec)
 
     def reserve(self, *csps):
+        slog('\t'.join(['release',str(*csps)]))
         svec = StcPython._unpackArgs(*csps)
         return self.stcInt.salReserve(svec)
 
@@ -139,11 +150,13 @@ excluding 3.5 variants')
         time.sleep(seconds)
 
     def subscribe(self, **kwargs):
+        slog('\t'.join(['subscribe',str(kwargs)]))
         svec = []
         StcPython._packKeyVal(svec, kwargs)
         return self.stcInt.salSubscribe(svec)
 
     def unsubscribe(self, rdsHandle):
+        slog('\t'.join(['unsubscribe',str(rdsHandle)]))
         return self.stcInt.salUnsubscribe(rdsHandle)
 
     def waitUntilComplete(self, **kwargs):
