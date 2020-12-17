@@ -74,7 +74,11 @@ node() {
             }
         }'''
 		echo info
-		step([$class: 'XrayImportBuilder', endpointName: '/cucumber/multipart', importFilePath: 'reports/cucumber.json', importInfo: info, inputInfoSwitcher: 'fileContent', serverInstance: xrayConnectorId])
-    
+        step([$class: 'XrayImportBuilder', 
+        endpointName: '/cucumber/multipart', 
+        importFilePath: 'reports/cucumber.json', 
+        importInfo: info, 
+        inputInfoSwitcher: 'fileContent', 
+        serverInstance: xrayConnectorId])
 	}
 }
