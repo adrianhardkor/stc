@@ -45,9 +45,14 @@ node() {
 			junit skipPublishingChecks: true, allowEmptyResults: true, keepLongStdio: true, testResults: 'reports/*.xml'
 		} 
 	}
+    stage ('Cucumber Reports') {
+        cucumber buildStatus: "UNSTABLE",
+        fileIncludePattern: "**/cucumber.json",
+        jsonReportDirectory: 'reports'
+    }
 	stage('Import results to Xray') {
 		echo "\n\n*** Import Results to XRAY ***"
-		def description = "[STC_BUILD_URL|${env.BUILD_URL}]"
+		def description = "[STC Test Report|${env.BUILD_URL}/cucumber-html-reports/overview-features.html]"
 		def labels = '["regression","automated_regression"]'
 		def environment = "DEV"
 		def testExecutionFieldId = 10552
