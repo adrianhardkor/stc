@@ -15,7 +15,7 @@ os.environ['STC_PRIVATE_INSTALL_DIR'] = STC_PRIVATE_INSTALL_DIR
 
 sys.path.insert(1,STC_PRIVATE_INSTALL_DIR + 'API/Python/')
 import Stc
-project = Stc.init('adrian')
+system1,project = Stc.init('adrian')
 Stc.connectChassis(ARC)
 ARC = ['//10.88.240.60/1/1', '//10.88.240.60/1/4']
 WP = ['//10.44.0.21/9/9', '//10.44.0.21/9/10' ]
