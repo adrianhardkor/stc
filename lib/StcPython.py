@@ -6,7 +6,7 @@ from platform import python_version
 import wcommon as wc
 
 def slog(msg):
-    wc.log_fname(msg + '\n', 'stc.log')
+    wc.log_fname(msg, 'stc.log')
 
 class StcPython(object):
 
