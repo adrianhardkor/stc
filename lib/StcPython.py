@@ -3,9 +3,10 @@ import sys
 import time
 import atexit
 from platform import python_version
+import wcommon as wc
 
 def slog(msg):
-    print(msg)
+    wc.log_fname(msg, 'stc.log')
 
 class StcPython(object):
 

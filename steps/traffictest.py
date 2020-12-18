@@ -14,7 +14,7 @@ import Stc
 
 @given(u'Spirent config built')
 def step_impl(context):
-	project = Stc.init('traffictest.py')
+	system1,project = Stc.init('traffictest.py')
 	Stc.connectChassis(ARC)
 	assert True
 
@@ -22,6 +22,7 @@ def step_impl(context):
 def step_impl(context, ip):
 	context.ip = ip
 	context.pingable = bool(wc.is_pingable(ip))
+	print('\t'.join(['','PID',str(os.getpid())]))
 	pass
 
 @then(u'I expect response "{expectationBoolean}"')
@@ -29,3 +30,5 @@ def step_impl(context, expectationBoolean):
 	expectationBoolean = wc.bdd_bool_inp(expectationBoolean)
 	print('\t'.join(['',context.ip,'actual:' + str(context.pingable),'','expected:' + str(expectationBoolean)]))
 	assert context.pingable == expectationBoolean
+
+Stc.disconnectChassis()
