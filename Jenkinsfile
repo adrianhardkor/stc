@@ -74,7 +74,7 @@ node() {
                 },
                 "labels":''' + labels + ''',
                 "description":"''' + description + '''",
-                "summary": "Testing Jenkins - Automated Regression Execution @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
+                "summary": "Jenkins Automated Regression Execution of STC Demo @ ''' + env.BUILD_TIME + ' ' + environment + ''' " ,
                 "issuetype": {
                     "id": "''' + testExecutionFieldId + '''"
                 }
