@@ -762,10 +762,10 @@ def grep_until(begin, ending, data):
         # pairprint(each, flag)
     return(result)
 
-def REST_GET(url, headers={"Content-Type": "application/json", "Accept": "application/json"}, user='', pword=''):
+def REST_GET(url, headers={"Content-Type": "application/json", "Accept": "application/json"}, user='', pword='',verify=True):
     # RETURNS JSON
     data = {}
-    response = requests.get(url, auth=(user, pword), headers=headers)
+    response = requests.get(url, auth=(user, pword), headers=headers,verify=verify)
     if response.status_code != 200:
         data['url'] = url
         data['user'] = user
