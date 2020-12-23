@@ -1,6 +1,6 @@
 node() {
 
-    def repoURL = "https://github.com/bford62/Bob-STC.git"
+    def repoURL = "https://github.com/adrianhardkor/stc.git"
 
     def STC_INSTALL = "/opt/STC_CLIENT/Spirent_TestCenter_5.16/Spirent_TestCenter_Application_Linux64Client/"
     def os = System.properties['os.name'].toLowerCase()

@@ -1,0 +1,51 @@
+<testsuite errors="0" failures="0" hostname="wopr-sb" name="features.VELOCITY.Test Ping Functionality" skipped="0" tests="1" time="1.724514" timestamp="2020-12-23T12:54:47.579415"><testcase classname="features.VELOCITY.Test Ping Functionality" name="PING_EXPECTED_TRUE" status="passed" time="1.724514"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @demo @XT-229
+  Scenario: PING_EXPECTED_TRUE
+    Given Spirent config built ... passed in 0.627s
+    When I try to ping "10.88.48.31" ... passed in 1.012s
+    Then I expect response "true" ... passed in 0.086s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+
+Connect to CHASSIS: 10.88.240.60 = '625.09'
+{
+  "Active": "true",
+  "FirmwareArchiveDir": "",
+  "Hostname": "wopr-sb",
+  "Name": "PhysicalChassisManager 1",
+  "ProcessId": "94355",
+  "RawImageArchiveDir": "",
+  "Timestamp": "Wed Dec 23 12:54:30 2020",
+  "UserId": "adrian",
+  "children": "physicalchassis1 testmodulecapabilities1",
+  "parent": "system1"
+}
+Timestamp = '18465.1ms'
+
+
+	PID	94281
+	10.88.48.31	actual:True		expected:True
+//10.88.240.60/E20190236	SPT-N12U	5.16.0166	FIRMWARE_INSTALL_INACTIVE	CHASSIS_STATUS_UP
+//10.88.240.60/1/1	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/2	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/3	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/4	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/5	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/6	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/7	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/8	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/9	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/10	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/11	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+//10.88.240.60/1/12	true/true	Idle/OWNERSHIP_STATE_AVAILABLE	MODULE_STATUS_UP
+DISCONNECTING FROM ALL STC CHASSIS
+
+]]>
+</system-out></testcase></testsuite>

@@ -8,10 +8,11 @@ wc.jenkins_header(); # load inputs from Jenkinsfile
 # wc.jd(wc.wcheader)
 
 
-V = '10.88.48.31'
-url = '/velocity/api/inventory/v14/devices'
+vIP = '10.88.48.31'
 u = 'akrygows'
 p = 'WowArc1'
-wc.jd(json.loads(wc.REST_GET('https://' + V + url, user=u, pword=p, verify=False)))
+V = 'https://%s/velocity/api' % vIP
+url = '/inventory/v14/devices'
+wc.jd(json.loads(wc.REST_GET(V + url, user=u, pword=p, verify=False)))
 exit(0)
 

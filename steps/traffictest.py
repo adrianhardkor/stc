@@ -29,6 +29,8 @@ def step_impl(context, ip):
 def step_impl(context, expectationBoolean):
 	expectationBoolean = wc.bdd_bool_inp(expectationBoolean)
 	print('\t'.join(['',context.ip,'actual:' + str(context.pingable),'','expected:' + str(expectationBoolean)]))
+	physical = Stc.getConnectedChassisPhysical([ARC])
+	Stc.getPhysicalHuman(physical)
 	assert context.pingable == expectationBoolean
+	Stc.disconnectChassis()
 
-Stc.disconnectChassis()

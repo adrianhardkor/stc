@@ -1,0 +1,1704 @@
+perform	ChassisDisconnectAll	{}
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule13	
+get	physicaltestmodule13	children-PhysicalPortgroup
+get	physicalportgroup13	
+get	physicalportgroup13	children-PhysicalPort
+get	physicalport13	
+get	physicalportgroup14	
+get	physicalportgroup14	children-PhysicalPort
+get	physicalport14	
+get	physicalportgroup15	
+get	physicalportgroup15	children-PhysicalPort
+get	physicalport15	
+get	physicalportgroup16	
+get	physicalportgroup16	children-PhysicalPort
+get	physicalport16	
+get	physicalportgroup17	
+get	physicalportgroup17	children-PhysicalPort
+get	physicalport17	
+get	physicalportgroup18	
+get	physicalportgroup18	children-PhysicalPort
+get	physicalport18	
+get	physicalportgroup19	
+get	physicalportgroup19	children-PhysicalPort
+get	physicalport19	
+get	physicalportgroup20	
+get	physicalportgroup20	children-PhysicalPort
+get	physicalport20	
+get	physicalportgroup21	
+get	physicalportgroup21	children-PhysicalPort
+get	physicalport21	
+get	physicalportgroup22	
+get	physicalportgroup22	children-PhysicalPort
+get	physicalport22	
+get	physicalportgroup23	
+get	physicalportgroup23	children-PhysicalPort
+get	physicalport23	
+get	physicalportgroup24	
+get	physicalportgroup24	children-PhysicalPort
+get	physicalport24	
+get	physicaltestmodule14	
+get	physicaltestmodule14	children-PhysicalPortgroup
+get	physicaltestmodule15	
+get	physicaltestmodule15	children-PhysicalPortgroup
+get	physicaltestmodule16	
+get	physicaltestmodule16	children-PhysicalPortgroup
+get	physicaltestmodule17	
+get	physicaltestmodule17	children-PhysicalPortgroup
+get	physicaltestmodule18	
+get	physicaltestmodule18	children-PhysicalPortgroup
+get	physicaltestmodule19	
+get	physicaltestmodule19	children-PhysicalPortgroup
+get	physicaltestmodule20	
+get	physicaltestmodule20	children-PhysicalPortgroup
+get	physicaltestmodule21	
+get	physicaltestmodule21	children-PhysicalPortgroup
+get	physicaltestmodule22	
+get	physicaltestmodule22	children-PhysicalPortgroup
+get	physicaltestmodule23	
+get	physicaltestmodule23	children-PhysicalPortgroup
+get	physicaltestmodule24	
+get	physicaltestmodule24	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule25	
+get	physicaltestmodule25	children-PhysicalPortgroup
+get	physicalportgroup25	
+get	physicalportgroup25	children-PhysicalPort
+get	physicalport25	
+get	physicalportgroup26	
+get	physicalportgroup26	children-PhysicalPort
+get	physicalport26	
+get	physicalportgroup27	
+get	physicalportgroup27	children-PhysicalPort
+get	physicalport27	
+get	physicalportgroup28	
+get	physicalportgroup28	children-PhysicalPort
+get	physicalport28	
+get	physicalportgroup29	
+get	physicalportgroup29	children-PhysicalPort
+get	physicalport29	
+get	physicalportgroup30	
+get	physicalportgroup30	children-PhysicalPort
+get	physicalport30	
+get	physicalportgroup31	
+get	physicalportgroup31	children-PhysicalPort
+get	physicalport31	
+get	physicalportgroup32	
+get	physicalportgroup32	children-PhysicalPort
+get	physicalport32	
+get	physicalportgroup33	
+get	physicalportgroup33	children-PhysicalPort
+get	physicalport33	
+get	physicalportgroup34	
+get	physicalportgroup34	children-PhysicalPort
+get	physicalport34	
+get	physicalportgroup35	
+get	physicalportgroup35	children-PhysicalPort
+get	physicalport35	
+get	physicalportgroup36	
+get	physicalportgroup36	children-PhysicalPort
+get	physicalport36	
+get	physicaltestmodule26	
+get	physicaltestmodule26	children-PhysicalPortgroup
+get	physicaltestmodule27	
+get	physicaltestmodule27	children-PhysicalPortgroup
+get	physicaltestmodule28	
+get	physicaltestmodule28	children-PhysicalPortgroup
+get	physicaltestmodule29	
+get	physicaltestmodule29	children-PhysicalPortgroup
+get	physicaltestmodule30	
+get	physicaltestmodule30	children-PhysicalPortgroup
+get	physicaltestmodule31	
+get	physicaltestmodule31	children-PhysicalPortgroup
+get	physicaltestmodule32	
+get	physicaltestmodule32	children-PhysicalPortgroup
+get	physicaltestmodule33	
+get	physicaltestmodule33	children-PhysicalPortgroup
+get	physicaltestmodule34	
+get	physicaltestmodule34	children-PhysicalPortgroup
+get	physicaltestmodule35	
+get	physicaltestmodule35	children-PhysicalPortgroup
+get	physicaltestmodule36	
+get	physicaltestmodule36	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule13	
+get	physicaltestmodule13	children-PhysicalPortgroup
+get	physicalportgroup13	
+get	physicalportgroup13	children-PhysicalPort
+get	physicalport13	
+get	physicalportgroup14	
+get	physicalportgroup14	children-PhysicalPort
+get	physicalport14	
+get	physicalportgroup15	
+get	physicalportgroup15	children-PhysicalPort
+get	physicalport15	
+get	physicalportgroup16	
+get	physicalportgroup16	children-PhysicalPort
+get	physicalport16	
+get	physicalportgroup17	
+get	physicalportgroup17	children-PhysicalPort
+get	physicalport17	
+get	physicalportgroup18	
+get	physicalportgroup18	children-PhysicalPort
+get	physicalport18	
+get	physicalportgroup19	
+get	physicalportgroup19	children-PhysicalPort
+get	physicalport19	
+get	physicalportgroup20	
+get	physicalportgroup20	children-PhysicalPort
+get	physicalport20	
+get	physicalportgroup21	
+get	physicalportgroup21	children-PhysicalPort
+get	physicalport21	
+get	physicalportgroup22	
+get	physicalportgroup22	children-PhysicalPort
+get	physicalport22	
+get	physicalportgroup23	
+get	physicalportgroup23	children-PhysicalPort
+get	physicalport23	
+get	physicalportgroup24	
+get	physicalportgroup24	children-PhysicalPort
+get	physicalport24	
+get	physicaltestmodule14	
+get	physicaltestmodule14	children-PhysicalPortgroup
+get	physicaltestmodule15	
+get	physicaltestmodule15	children-PhysicalPortgroup
+get	physicaltestmodule16	
+get	physicaltestmodule16	children-PhysicalPortgroup
+get	physicaltestmodule17	
+get	physicaltestmodule17	children-PhysicalPortgroup
+get	physicaltestmodule18	
+get	physicaltestmodule18	children-PhysicalPortgroup
+get	physicaltestmodule19	
+get	physicaltestmodule19	children-PhysicalPortgroup
+get	physicaltestmodule20	
+get	physicaltestmodule20	children-PhysicalPortgroup
+get	physicaltestmodule21	
+get	physicaltestmodule21	children-PhysicalPortgroup
+get	physicaltestmodule22	
+get	physicaltestmodule22	children-PhysicalPortgroup
+get	physicaltestmodule23	
+get	physicaltestmodule23	children-PhysicalPortgroup
+get	physicaltestmodule24	
+get	physicaltestmodule24	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule25	
+get	physicaltestmodule25	children-PhysicalPortgroup
+get	physicalportgroup25	
+get	physicalportgroup25	children-PhysicalPort
+get	physicalport25	
+get	physicalportgroup26	
+get	physicalportgroup26	children-PhysicalPort
+get	physicalport26	
+get	physicalportgroup27	
+get	physicalportgroup27	children-PhysicalPort
+get	physicalport27	
+get	physicalportgroup28	
+get	physicalportgroup28	children-PhysicalPort
+get	physicalport28	
+get	physicalportgroup29	
+get	physicalportgroup29	children-PhysicalPort
+get	physicalport29	
+get	physicalportgroup30	
+get	physicalportgroup30	children-PhysicalPort
+get	physicalport30	
+get	physicalportgroup31	
+get	physicalportgroup31	children-PhysicalPort
+get	physicalport31	
+get	physicalportgroup32	
+get	physicalportgroup32	children-PhysicalPort
+get	physicalport32	
+get	physicalportgroup33	
+get	physicalportgroup33	children-PhysicalPort
+get	physicalport33	
+get	physicalportgroup34	
+get	physicalportgroup34	children-PhysicalPort
+get	physicalport34	
+get	physicalportgroup35	
+get	physicalportgroup35	children-PhysicalPort
+get	physicalport35	
+get	physicalportgroup36	
+get	physicalportgroup36	children-PhysicalPort
+get	physicalport36	
+get	physicaltestmodule26	
+get	physicaltestmodule26	children-PhysicalPortgroup
+get	physicaltestmodule27	
+get	physicaltestmodule27	children-PhysicalPortgroup
+get	physicaltestmodule28	
+get	physicaltestmodule28	children-PhysicalPortgroup
+get	physicaltestmodule29	
+get	physicaltestmodule29	children-PhysicalPortgroup
+get	physicaltestmodule30	
+get	physicaltestmodule30	children-PhysicalPortgroup
+get	physicaltestmodule31	
+get	physicaltestmodule31	children-PhysicalPortgroup
+get	physicaltestmodule32	
+get	physicaltestmodule32	children-PhysicalPortgroup
+get	physicaltestmodule33	
+get	physicaltestmodule33	children-PhysicalPortgroup
+get	physicaltestmodule34	
+get	physicaltestmodule34	children-PhysicalPortgroup
+get	physicaltestmodule35	
+get	physicaltestmodule35	children-PhysicalPortgroup
+get	physicaltestmodule36	
+get	physicaltestmodule36	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule13	
+get	physicaltestmodule13	children-PhysicalPortgroup
+get	physicalportgroup13	
+get	physicalportgroup13	children-PhysicalPort
+get	physicalport13	
+get	physicalportgroup14	
+get	physicalportgroup14	children-PhysicalPort
+get	physicalport14	
+get	physicalportgroup15	
+get	physicalportgroup15	children-PhysicalPort
+get	physicalport15	
+get	physicalportgroup16	
+get	physicalportgroup16	children-PhysicalPort
+get	physicalport16	
+get	physicalportgroup17	
+get	physicalportgroup17	children-PhysicalPort
+get	physicalport17	
+get	physicalportgroup18	
+get	physicalportgroup18	children-PhysicalPort
+get	physicalport18	
+get	physicalportgroup19	
+get	physicalportgroup19	children-PhysicalPort
+get	physicalport19	
+get	physicalportgroup20	
+get	physicalportgroup20	children-PhysicalPort
+get	physicalport20	
+get	physicalportgroup21	
+get	physicalportgroup21	children-PhysicalPort
+get	physicalport21	
+get	physicalportgroup22	
+get	physicalportgroup22	children-PhysicalPort
+get	physicalport22	
+get	physicalportgroup23	
+get	physicalportgroup23	children-PhysicalPort
+get	physicalport23	
+get	physicalportgroup24	
+get	physicalportgroup24	children-PhysicalPort
+get	physicalport24	
+get	physicaltestmodule14	
+get	physicaltestmodule14	children-PhysicalPortgroup
+get	physicaltestmodule15	
+get	physicaltestmodule15	children-PhysicalPortgroup
+get	physicaltestmodule16	
+get	physicaltestmodule16	children-PhysicalPortgroup
+get	physicaltestmodule17	
+get	physicaltestmodule17	children-PhysicalPortgroup
+get	physicaltestmodule18	
+get	physicaltestmodule18	children-PhysicalPortgroup
+get	physicaltestmodule19	
+get	physicaltestmodule19	children-PhysicalPortgroup
+get	physicaltestmodule20	
+get	physicaltestmodule20	children-PhysicalPortgroup
+get	physicaltestmodule21	
+get	physicaltestmodule21	children-PhysicalPortgroup
+get	physicaltestmodule22	
+get	physicaltestmodule22	children-PhysicalPortgroup
+get	physicaltestmodule23	
+get	physicaltestmodule23	children-PhysicalPortgroup
+get	physicaltestmodule24	
+get	physicaltestmodule24	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule25	
+get	physicaltestmodule25	children-PhysicalPortgroup
+get	physicalportgroup25	
+get	physicalportgroup25	children-PhysicalPort
+get	physicalport25	
+get	physicalportgroup26	
+get	physicalportgroup26	children-PhysicalPort
+get	physicalport26	
+get	physicalportgroup27	
+get	physicalportgroup27	children-PhysicalPort
+get	physicalport27	
+get	physicalportgroup28	
+get	physicalportgroup28	children-PhysicalPort
+get	physicalport28	
+get	physicalportgroup29	
+get	physicalportgroup29	children-PhysicalPort
+get	physicalport29	
+get	physicalportgroup30	
+get	physicalportgroup30	children-PhysicalPort
+get	physicalport30	
+get	physicalportgroup31	
+get	physicalportgroup31	children-PhysicalPort
+get	physicalport31	
+get	physicalportgroup32	
+get	physicalportgroup32	children-PhysicalPort
+get	physicalport32	
+get	physicalportgroup33	
+get	physicalportgroup33	children-PhysicalPort
+get	physicalport33	
+get	physicalportgroup34	
+get	physicalportgroup34	children-PhysicalPort
+get	physicalport34	
+get	physicalportgroup35	
+get	physicalportgroup35	children-PhysicalPort
+get	physicalport35	
+get	physicalportgroup36	
+get	physicalportgroup36	children-PhysicalPort
+get	physicalport36	
+get	physicaltestmodule26	
+get	physicaltestmodule26	children-PhysicalPortgroup
+get	physicaltestmodule27	
+get	physicaltestmodule27	children-PhysicalPortgroup
+get	physicaltestmodule28	
+get	physicaltestmodule28	children-PhysicalPortgroup
+get	physicaltestmodule29	
+get	physicaltestmodule29	children-PhysicalPortgroup
+get	physicaltestmodule30	
+get	physicaltestmodule30	children-PhysicalPortgroup
+get	physicaltestmodule31	
+get	physicaltestmodule31	children-PhysicalPortgroup
+get	physicaltestmodule32	
+get	physicaltestmodule32	children-PhysicalPortgroup
+get	physicaltestmodule33	
+get	physicaltestmodule33	children-PhysicalPortgroup
+get	physicaltestmodule34	
+get	physicaltestmodule34	children-PhysicalPortgroup
+get	physicaltestmodule35	
+get	physicaltestmodule35	children-PhysicalPortgroup
+get	physicaltestmodule36	
+get	physicaltestmodule36	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+config	system1	{'InSimulationMode': 'FALSE', 'UseSmbMessaging': 'FALSE', 'IsLoadingFromConfiguration': 'TRUE', 'ApplicationName': 'TestCenter', 'TSharkPath': '', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'StcSystem 1'}
+get	system1	
+create	Project	{'TableViewData': '', 'TestMode': 'L2L3', 'SelectedTechnologyProfiles': 'dhcp', 'Active': 'TRUE', 'LocalActive': 'TRUE', 'Name': 'traffictest.py'}
+get	project1	
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule1	
+get	physicaltestmodule1	children-PhysicalPortgroup
+get	physicalportgroup1	
+get	physicalportgroup1	children-PhysicalPort
+get	physicalport1	
+get	physicalportgroup2	
+get	physicalportgroup2	children-PhysicalPort
+get	physicalport2	
+get	physicalportgroup3	
+get	physicalportgroup3	children-PhysicalPort
+get	physicalport3	
+get	physicalportgroup4	
+get	physicalportgroup4	children-PhysicalPort
+get	physicalport4	
+get	physicalportgroup5	
+get	physicalportgroup5	children-PhysicalPort
+get	physicalport5	
+get	physicalportgroup6	
+get	physicalportgroup6	children-PhysicalPort
+get	physicalport6	
+get	physicalportgroup7	
+get	physicalportgroup7	children-PhysicalPort
+get	physicalport7	
+get	physicalportgroup8	
+get	physicalportgroup8	children-PhysicalPort
+get	physicalport8	
+get	physicalportgroup9	
+get	physicalportgroup9	children-PhysicalPort
+get	physicalport9	
+get	physicalportgroup10	
+get	physicalportgroup10	children-PhysicalPort
+get	physicalport10	
+get	physicalportgroup11	
+get	physicalportgroup11	children-PhysicalPort
+get	physicalport11	
+get	physicalportgroup12	
+get	physicalportgroup12	children-PhysicalPort
+get	physicalport12	
+get	physicaltestmodule2	
+get	physicaltestmodule2	children-PhysicalPortgroup
+get	physicaltestmodule3	
+get	physicaltestmodule3	children-PhysicalPortgroup
+get	physicaltestmodule4	
+get	physicaltestmodule4	children-PhysicalPortgroup
+get	physicaltestmodule5	
+get	physicaltestmodule5	children-PhysicalPortgroup
+get	physicaltestmodule6	
+get	physicaltestmodule6	children-PhysicalPortgroup
+get	physicaltestmodule7	
+get	physicaltestmodule7	children-PhysicalPortgroup
+get	physicaltestmodule8	
+get	physicaltestmodule8	children-PhysicalPortgroup
+get	physicaltestmodule9	
+get	physicaltestmodule9	children-PhysicalPortgroup
+get	physicaltestmodule10	
+get	physicaltestmodule10	children-PhysicalPortgroup
+get	physicaltestmodule11	
+get	physicaltestmodule11	children-PhysicalPortgroup
+get	physicaltestmodule12	
+get	physicaltestmodule12	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule13	
+get	physicaltestmodule13	children-PhysicalPortgroup
+get	physicalportgroup13	
+get	physicalportgroup13	children-PhysicalPort
+get	physicalport13	
+get	physicalportgroup14	
+get	physicalportgroup14	children-PhysicalPort
+get	physicalport14	
+get	physicalportgroup15	
+get	physicalportgroup15	children-PhysicalPort
+get	physicalport15	
+get	physicalportgroup16	
+get	physicalportgroup16	children-PhysicalPort
+get	physicalport16	
+get	physicalportgroup17	
+get	physicalportgroup17	children-PhysicalPort
+get	physicalport17	
+get	physicalportgroup18	
+get	physicalportgroup18	children-PhysicalPort
+get	physicalport18	
+get	physicalportgroup19	
+get	physicalportgroup19	children-PhysicalPort
+get	physicalport19	
+get	physicalportgroup20	
+get	physicalportgroup20	children-PhysicalPort
+get	physicalport20	
+get	physicalportgroup21	
+get	physicalportgroup21	children-PhysicalPort
+get	physicalport21	
+get	physicalportgroup22	
+get	physicalportgroup22	children-PhysicalPort
+get	physicalport22	
+get	physicalportgroup23	
+get	physicalportgroup23	children-PhysicalPort
+get	physicalport23	
+get	physicalportgroup24	
+get	physicalportgroup24	children-PhysicalPort
+get	physicalport24	
+get	physicaltestmodule14	
+get	physicaltestmodule14	children-PhysicalPortgroup
+get	physicaltestmodule15	
+get	physicaltestmodule15	children-PhysicalPortgroup
+get	physicaltestmodule16	
+get	physicaltestmodule16	children-PhysicalPortgroup
+get	physicaltestmodule17	
+get	physicaltestmodule17	children-PhysicalPortgroup
+get	physicaltestmodule18	
+get	physicaltestmodule18	children-PhysicalPortgroup
+get	physicaltestmodule19	
+get	physicaltestmodule19	children-PhysicalPortgroup
+get	physicaltestmodule20	
+get	physicaltestmodule20	children-PhysicalPortgroup
+get	physicaltestmodule21	
+get	physicaltestmodule21	children-PhysicalPortgroup
+get	physicaltestmodule22	
+get	physicaltestmodule22	children-PhysicalPortgroup
+get	physicaltestmodule23	
+get	physicaltestmodule23	children-PhysicalPortgroup
+get	physicaltestmodule24	
+get	physicaltestmodule24	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}
+connect	10.88.240.60
+apply()
+create	PhysicalChassisManager	{'under': 'system1'}
+get	physicalchassismanager1	
+get	system1	children-PhysicalChassisManager
+get	physicalchassismanager1	children-PhysicalChassis
+get	physicalchassis1	
+get	physicalchassis1	
+get	physicalchassis1	children-PhysicalTestmodule
+get	physicaltestmodule25	
+get	physicaltestmodule25	children-PhysicalPortgroup
+get	physicalportgroup25	
+get	physicalportgroup25	children-PhysicalPort
+get	physicalport25	
+get	physicalportgroup26	
+get	physicalportgroup26	children-PhysicalPort
+get	physicalport26	
+get	physicalportgroup27	
+get	physicalportgroup27	children-PhysicalPort
+get	physicalport27	
+get	physicalportgroup28	
+get	physicalportgroup28	children-PhysicalPort
+get	physicalport28	
+get	physicalportgroup29	
+get	physicalportgroup29	children-PhysicalPort
+get	physicalport29	
+get	physicalportgroup30	
+get	physicalportgroup30	children-PhysicalPort
+get	physicalport30	
+get	physicalportgroup31	
+get	physicalportgroup31	children-PhysicalPort
+get	physicalport31	
+get	physicalportgroup32	
+get	physicalportgroup32	children-PhysicalPort
+get	physicalport32	
+get	physicalportgroup33	
+get	physicalportgroup33	children-PhysicalPort
+get	physicalport33	
+get	physicalportgroup34	
+get	physicalportgroup34	children-PhysicalPort
+get	physicalport34	
+get	physicalportgroup35	
+get	physicalportgroup35	children-PhysicalPort
+get	physicalport35	
+get	physicalportgroup36	
+get	physicalportgroup36	children-PhysicalPort
+get	physicalport36	
+get	physicaltestmodule26	
+get	physicaltestmodule26	children-PhysicalPortgroup
+get	physicaltestmodule27	
+get	physicaltestmodule27	children-PhysicalPortgroup
+get	physicaltestmodule28	
+get	physicaltestmodule28	children-PhysicalPortgroup
+get	physicaltestmodule29	
+get	physicaltestmodule29	children-PhysicalPortgroup
+get	physicaltestmodule30	
+get	physicaltestmodule30	children-PhysicalPortgroup
+get	physicaltestmodule31	
+get	physicaltestmodule31	children-PhysicalPortgroup
+get	physicaltestmodule32	
+get	physicaltestmodule32	children-PhysicalPortgroup
+get	physicaltestmodule33	
+get	physicaltestmodule33	children-PhysicalPortgroup
+get	physicaltestmodule34	
+get	physicaltestmodule34	children-PhysicalPortgroup
+get	physicaltestmodule35	
+get	physicaltestmodule35	children-PhysicalPortgroup
+get	physicaltestmodule36	
+get	physicaltestmodule36	children-PhysicalPortgroup
+perform	ChassisDisconnectAll	{}

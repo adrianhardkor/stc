@@ -1,0 +1,220 @@
+[
+{
+  "description": "",
+  "elements": [
+    {
+      "description": "",
+      "id": "test-ping-functionality;ping_expected_true",
+      "keyword": "Scenario",
+      "line": 3,
+      "location": "features/VAGENT.feature:3",
+      "name": "PING_EXPECTED_TRUE",
+      "steps": [
+        {
+          "keyword": "Given",
+          "line": 4,
+          "match": {
+            "location": "steps/traffictest.py:15"
+          },
+          "name": "Spirent config built",
+          "result": {
+            "duration": 668404341,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "line": 5,
+          "match": {
+            "location": "steps/traffictest.py:21"
+          },
+          "name": "I try to ping \"10.88.48.30\"",
+          "result": {
+            "duration": 1017977953,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "line": 6,
+          "match": {
+            "location": "steps/traffictest.py:28"
+          },
+          "name": "I expect response \"true\"",
+          "result": {
+            "duration": 78832388,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        {
+          "line": 2,
+          "name": "demo"
+        },
+        {
+          "line": 2,
+          "name": "XT-229"
+        }
+      ],
+      "type": "scenario"
+    }
+  ],
+  "id": "test-ping-functionality",
+  "keyword": "Feature",
+  "line": 1,
+  "name": "Test Ping Functionality",
+  "status": "passed",
+  "tags": [],
+  "uri": "features/VAGENT.feature"
+},
+
+{
+  "description": "",
+  "elements": [
+    {
+      "description": "",
+      "id": "test-ping-functionality;ping_expected_true",
+      "keyword": "Scenario",
+      "line": 3,
+      "location": "features/VDB.feature:3",
+      "name": "PING_EXPECTED_TRUE",
+      "steps": [
+        {
+          "keyword": "Given",
+          "line": 4,
+          "match": {
+            "location": "steps/traffictest.py:15"
+          },
+          "name": "Spirent config built",
+          "result": {
+            "duration": 627276659,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "line": 5,
+          "match": {
+            "location": "steps/traffictest.py:21"
+          },
+          "name": "I try to ping \"10.88.48.32\"",
+          "result": {
+            "duration": 1014521599,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "line": 6,
+          "match": {
+            "location": "steps/traffictest.py:28"
+          },
+          "name": "I expect response \"true\"",
+          "result": {
+            "duration": 83105564,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        {
+          "line": 2,
+          "name": "demo"
+        },
+        {
+          "line": 2,
+          "name": "XT-229"
+        }
+      ],
+      "type": "scenario"
+    }
+  ],
+  "id": "test-ping-functionality",
+  "keyword": "Feature",
+  "line": 1,
+  "name": "Test Ping Functionality",
+  "status": "passed",
+  "tags": [],
+  "uri": "features/VDB.feature"
+},
+
+{
+  "description": "",
+  "elements": [
+    {
+      "description": "",
+      "id": "test-ping-functionality;ping_expected_true",
+      "keyword": "Scenario",
+      "line": 3,
+      "location": "features/VELOCITY.feature:3",
+      "name": "PING_EXPECTED_TRUE",
+      "steps": [
+        {
+          "keyword": "Given",
+          "line": 4,
+          "match": {
+            "location": "steps/traffictest.py:15"
+          },
+          "name": "Spirent config built",
+          "result": {
+            "duration": 626579523,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "line": 5,
+          "match": {
+            "location": "steps/traffictest.py:21"
+          },
+          "name": "I try to ping \"10.88.48.31\"",
+          "result": {
+            "duration": 1012284994,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "line": 6,
+          "match": {
+            "location": "steps/traffictest.py:28"
+          },
+          "name": "I expect response \"true\"",
+          "result": {
+            "duration": 85649490,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        {
+          "line": 2,
+          "name": "demo"
+        },
+        {
+          "line": 2,
+          "name": "XT-229"
+        }
+      ],
+      "type": "scenario"
+    }
+  ],
+  "id": "test-ping-functionality",
+  "keyword": "Feature",
+  "line": 1,
+  "name": "Test Ping Functionality",
+  "status": "passed",
+  "tags": [],
+  "uri": "features/VELOCITY.feature"
+}
+]

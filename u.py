@@ -16,11 +16,13 @@ import Stc
 ARC = '10.88.240.60'
 WP = '10.44.0.21'
 system1,project = Stc.init('adrian')
+system1,project = Stc.init('adrian')
+exit(0)
+
 Stc.connectChassis(ARC)
-wc.jd(Stc.getConnectedChassisPhysical([ARC]))
+physical = Stc.getConnectedChassisPhysical([ARC])
 
-
-
+Stc.getPhysicalHuman(physical)
 
 
 ARC = ['//10.88.240.60/1/1', '//10.88.240.60/1/4']
