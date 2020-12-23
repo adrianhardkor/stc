@@ -41,6 +41,11 @@ node() {
                sh """
                     export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
                     cd $env.WORKSPACE_LOCAL
+                    /var/lib/jenkins/.pyenv/shims/behave --no-capture 
+               """
+               sh """
+                    export STC_PRIVATE_INSTALL_DIR=${STC_INSTALL}
+                    cd $env.WORKSPACE_LOCAL
                     /var/lib/jenkins/.pyenv/shims/behave -f cucumber -o reports/cucumber.json --junit --junit
                """
             } catch (error) {
