@@ -7,12 +7,25 @@ import wcommon as wc
 wc.jenkins_header(); # load inputs from Jenkinsfile
 # wc.jd(wc.wcheader)
 
+def vREST(ip, url, u='', p=''):
+    global TOKEN
+    V = 'https://' + ip + '/velocity/api'
+    if u != '' and p != '':
+        # Get Token return
+        V = V + '/auth/v2/token'
+        wc.REST_GET(V, user=u, pword=p, verify=False)
+    else:
+        V = V + url
+    wc.REST_GET()        
 
 vIP = '10.88.48.31'
 u = 'akrygows'
 p = 'WowArc1'
 V = 'https://%s/velocity/api' % vIP
-url = '/inventory/v14/devices'
-wc.jd(json.loads(wc.REST_GET(V + url, user=u, pword=p, verify=False)))
+# wc.jd(json.loads(wc.REST_GET(V + '/velocity/api/auth/v2/token')))
+# curl -s -X GET --user $username:$password $velocityUri/velocity/api/auth/v2/token
+
+
+wc.jd(json.loads(wc.REST_GET(V + '/inventory/v14/devices', user=u, pword=p, verify=False)))
 exit(0)
 
